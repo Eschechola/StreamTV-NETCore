@@ -1,6 +1,7 @@
 ﻿*{
     margin: 0;
     padding: 0;
+    font-family: Arial;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
     background-color: rgb(3,38,106);
     height: 100vh;
     position: fixed;
-    width: 100px;
+    width: 5vw;
 }
 
 .menu-itens{
@@ -30,9 +31,88 @@ body {
 .item-menu{
     width: 100%;
     height: 10%;
-    background-color: blue;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.item-menu img{
+    width: 40%;
+    margin-left: 50%;
+    position: relative;
+    margin-top: 12.5%;
+    transform: translateX(-50%);
+}
+
+.item-menu:hover{
+    background-color: #00153d;
+    transition: 0.5s;
 }
 
 .opacity-off{
     opacity: 0;
+    cursor: initial !important;
+}
+
+.selected-menu {
+    background-color: #00153d;
+}
+
+#TextUser{
+    color: lightgray;
+    font-family: Arial;
+    margin-top: 5%;
+    font-size: 0.8vw;
+}
+
+.content-page {
+    width: 95vw;
+    height: 100vh;
+    float: left;
+    background-color: rgb(64,64,64);
+    margin-left: 5vw;
+    position: relative;
+}
+
+.content-televisions {
+    width: 90%;
+    height: 50%;
+    border-radius: 8px;
+    margin-top: 5%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #5E5758;
+}
+
+.colunm-television{
+    width: 15%;
+    float: left;
+    height: 60%;
+    margin-left: 4%;
+    background-color: red;
+    border: 1px solid white;
+    margin-top: 5%;
+}
+
+.manage-televison{
+    width: 100%;
+    margin-top: 5%;
+    height: 200px;
+}
+
+.manage-televison h3{
+    color: #fafafa;
+}
+
+.manage-televison button {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: #03266A;
+    border: none;
+    color: white;
+    padding: 12px;
+    margin-top: 3%;
+    border-radius: 5px;
+    outline: 0 !important;
 }
