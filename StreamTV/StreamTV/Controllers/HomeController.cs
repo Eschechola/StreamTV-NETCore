@@ -33,5 +33,10 @@ namespace StreamTV.Controllers
         {
             return View();
         }
+
+        public IActionResult AddTelevision()
+        {
+            return View();
+        }
     }
 }

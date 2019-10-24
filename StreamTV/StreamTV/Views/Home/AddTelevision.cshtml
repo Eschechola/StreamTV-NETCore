@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewData["Title"] = "AddTelevision";
+}
+
+
+@{
+    ViewBag.Title = "Update Account - StreamTV";
+    ViewBag.Css = "dashboard.css";
+}
+
+<div class="content">
+    <nav class="left-nav">
+        <div class="menu-itens">
+            <div class="item-menu selected-menu" onclick="window.location.href ='/Home/Profile'">
+                <img src="~/imgsSite/userIcon.png" />
+                <center>
+                    <p id="TextUser">SENAI</p>
+                </center>
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu" onclick="window.location.href ='/Home/Index'">
+                <img src="~/imgsSite/userTelevision.png" />
+                <center>
+                    <p id="TextUser">Início</p>
+                </center>
+            </div>
+            <div class="item-menu" onclick="window.location.href ='/Home/Docs'">
+                <img src="~/imgsSite/userDocs.png" />
+                <center>
+                    <p id="TextUser">Docs</p>
+                </center>
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+
+            <div class="item-menu" onclick="window.location.href ='/Home/Logout'">
+                <img src="~/imgsSite/userLogout.png" />
+                <center>
+                    <p id="TextUser">Sair</p>
+                </center>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-page">
+        <div class="add-content">
+            <h2 id="Title-AddContent">Preencha algumas informações para poder adicionar um novo dispositivo</h2>
+
+            <form class="form-add-television">
+                <input type="text" placeholder="Digite o nome do dispositivo"/>
+                <div class="add-televisions-box">
+                    <div class="box-television">
+                        <center>
+                            <div class="background-box-television">
+                                <p id="TextBackgroundAdd">Adicionar</p>
+                            </div>
+
+                            <p id="TextPlusAdd">+</p>
+                        </center>
+                    </div>
+                    <div class="box-television">
+                        <center>
+                            <div class="background-box-television">
+                                <p id="TextBackgroundAdd">Adicionar</p>
+                            </div>
+
+                            <p id="TextPlusAdd">+</p>
+                        </center>
+                    </div>
+                    <div class="box-television">
+                        <center>
+                            <div class="background-box-television">
+                                <p id="TextBackgroundAdd">Adicionar</p>
+                            </div>
+                            <p id="TextPlusAdd">+</p>
+                        </center>
+                    </div>
+
+                    <div class="box-television">
+                        <center>
+                            <div class="background-box-television">
+                                <p id="TextBackgroundAdd">Adicionar</p>
+                            </div>
+                            <p id="TextPlusAdd">+</p>
+                        </center>
+                    </div>
+                </div>
+
+                <button type="submit" id="button-add-television">Adicionar</button>
+            </form>
+        </div>
+    </main>
+</div>
+
