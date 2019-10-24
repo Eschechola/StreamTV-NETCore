@@ -13,5 +13,25 @@ namespace StreamTV.Controllers
         {
             return View();
         }
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
+        public IActionResult Docs()
+        {
+            return View();
+        }
+
+        public IActionResult UpdateAccount()
+        {
+            return View();
+        }
+
+        public IActionResult EditTelevision(int idTelevision = 0)
+        {
+            return View();
+        }
     }
 }

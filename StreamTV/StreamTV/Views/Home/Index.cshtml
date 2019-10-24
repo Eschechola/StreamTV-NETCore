@@ -6,7 +6,7 @@
 <div class="content">
     <nav class="left-nav">
         <div class="menu-itens">
-            <div class="item-menu">
+            <div class="item-menu" onclick="window.location.href ='/Home/Profile'">
                 <img src="~/imgsSite/userIcon.png" />
                 <center>
                     <p id="TextUser">SENAI</p>
@@ -21,13 +21,13 @@
             <div class="item-menu opacity-off">
 
             </div>
-            <div class="item-menu selected-menu">
+            <div class="item-menu selected-menu" onclick="window.location.href ='/Home/Dashboard'">
                 <img src="~/imgsSite/userTelevision.png" />
                 <center>
                     <p id="TextUser">Início</p>
                 </center>
             </div>
-            <div class="item-menu">
+            <div class="item-menu" onclick="window.location.href ='/Home/Docs'">
                 <img src="~/imgsSite/userDocs.png" />
                 <center>
                     <p id="TextUser">Docs</p>
@@ -43,7 +43,7 @@
 
             </div>
 
-            <div class="item-menu">
+            <div class="item-menu" onclick="window.location.href ='/Home/Logout'">
                 <img src="~/imgsSite/userLogout.png" />
                 <center>
                     <p id="TextUser">Sair</p>
@@ -54,11 +54,60 @@
 
     <main class="content-page">
         <div class="content-televisions">
-            <div class="colunm-television"></div>
-            <div class="colunm-television"></div>
-            <div class="colunm-television"></div>
-            <div class="colunm-television"></div>
-            <div class="colunm-television"></div>
+            <div class="colunm-television" onclick="window.location.href='/Home/EditTelevision/?idTelevision=0'">
+                <div class="item-colunm-television">
+                    <div class="background-black-television">
+                        <center>
+                            <p id="TextEditTelevision">Editar<br>▾</p>
+                        </center>
+                    </div>
+                </div>
+                <p id="TitleTelevision">Televisão 1</p>
+            </div>
+
+            <div class="colunm-television" onclick="window.location.href='/Home/EditTelevision/?idTelevision=1'">
+                <div class="item-colunm-television">
+                    <div class="background-black-television">
+                        <center>
+                            <p id="TextEditTelevision">Editar<br>▾</p>
+                        </center>
+                    </div>
+                </div>
+                <p id="TitleTelevision">Televisão 2</p>
+            </div>
+
+            <div class="colunm-television" onclick="window.location.href='/Home/EditTelevision/?idTelevision=2'">
+                <div class="item-colunm-television">
+                    <div class="background-black-television">
+                        <center>
+                            <p id="TextEditTelevision">Editar<br>▾</p>
+                        </center>
+                    </div>
+                </div>
+                <p id="TitleTelevision">Televisão 3</p>
+            </div>
+
+            <div class="colunm-television" onclick="window.location.href='/Home/EditTelevision/?idTelevision=3'">
+                <div class="item-colunm-television">
+                    <div class="background-black-television">
+                        <center>
+                            <p id="TextEditTelevision">Editar<br>▾</p>
+                        </center>
+                    </div>
+                </div>
+                <p id="TitleTelevision">Televisão 4</p>
+            </div>
+
+            <div class="colunm-television" onclick="window.location.href='/Home/EditTelevision/?idTelevision=4'">
+                <div class="item-colunm-television">
+                    <div class="background-black-television">
+                        <center>
+                            <p id="TextEditTelevision">Editar<br>▾</p>
+                        </center>
+                    </div>
+                </div>
+                <p id="TitleTelevision">Televisão 5</p>
+            </div>
         </div>
 
         <div class="manage-televison">

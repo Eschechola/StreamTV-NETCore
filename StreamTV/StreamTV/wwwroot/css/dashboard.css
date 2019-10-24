@@ -60,7 +60,7 @@ body {
 #TextUser{
     color: lightgray;
     font-family: Arial;
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 0.8vw;
 }
 
@@ -90,12 +90,51 @@ body {
     float: left;
     height: 60%;
     margin-left: 4%;
-    background-color: red;
-    border: 1px solid white;
     margin-top: 5%;
 }
 
-.manage-televison{
+.item-colunm-television {
+    width: 100%;
+    background-color: rgba(189,189,189,1);
+    height: 80%;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: url(../imgsSite/userTelevisionIcon.png);
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#TitleTelevision {
+    color: rgba(189,189,189,1);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2vw;
+    margin-top: 5%;
+}
+
+
+.background-black-television {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.background-black-television:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#TextEditTelevision {
+    color: rgba(189,189,189,1);
+    font-size: 1.5vw;
+    transform: translateY(100%);
+}
+
+.manage-televison {
     width: 100%;
     margin-top: 5%;
     height: 200px;
@@ -103,6 +142,7 @@ body {
 
 .manage-televison h3{
     color: #fafafa;
+    font-size: 2vw;
 }
 
 .manage-televison button {
@@ -115,4 +155,81 @@ body {
     margin-top: 3%;
     border-radius: 5px;
     outline: 0 !important;
+    font-size: 1.3vw;
+    transition: 0.5s;
 }
+
+.manage-televison button:hover {
+    background-color: #00153d;
+    transition: 0.5s;
+}
+
+.profile-page {
+    width: 30%;
+    height: 100vh;
+    float: left;
+}
+
+.profile-page-television {
+    width: 70%;
+    height: 100vh;
+    float: left;
+    background-color: rgba(143,143,143,1);
+}
+
+.profile-box-picture{
+    width: 70%;
+    height: 35%;
+    border-radius: 100%;
+    background-color:rgba(3,38,106,1);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10%;
+}
+
+.profile-box-picture img{
+    width: 75%;
+    margin-left: 50%;
+    margin-top: 10%;
+    transform: translateX(-50%);
+}
+
+#NameUser{
+    text-align: center;
+    margin-top: 5%;
+    color: rgba(189,189,189,1);
+    font-size: 1.7vw;
+}
+
+table {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: rgba(189,189,189,1);
+    font-size: 1.2vw;
+}
+
+td {
+    padding: 2px;
+    text-align: right;
+}
+
+#button-update {
+    background-color: rgba(3,38,106,1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: rgba(189,189,189,1);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    outline: 0;
+    margin-top: 30%;
+    width: 65%;
+    transition: 0.5s;
+}
+
+#button-update:hover {
+    background-color: #00153d;
+    transition: 0.5s;
+}
+
+
