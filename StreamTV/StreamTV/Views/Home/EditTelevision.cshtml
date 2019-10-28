@@ -1,7 +1,80 @@
-﻿
-@{
-    ViewData["Title"] = "EditTelevision";
+﻿@{
+    ViewBag.Title = "Edit Television - StreamTV";
+    ViewBag.Css = "dashboard.css";
 }
 
-<h1>EditTelevision</h1>
 
+<div class="content">
+    <nav class="left-nav">
+        <div class="menu-itens">
+            <div class="item-menu selected-menu" onclick="window.location.href ='/Home/Profile'">
+                <img src="~/imgsSite/userIcon.png" />
+                <center>
+                    <p id="TextUser">SENAI</p>
+                </center>
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu" onclick="window.location.href ='/Home/Index'">
+                <img src="~/imgsSite/userTelevision.png" />
+                <center>
+                    <p id="TextUser">Início</p>
+                </center>
+            </div>
+            <div class="item-menu" onclick="window.location.href ='/Home/Docs'">
+                <img src="~/imgsSite/userDocs.png" />
+                <center>
+                    <p id="TextUser">Docs</p>
+                </center>
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+            <div class="item-menu opacity-off">
+
+            </div>
+
+            <div class="item-menu" onclick="window.location.href ='/Home/Logout'">
+                <img src="~/imgsSite/userLogout.png" />
+                <center>
+                    <p id="TextUser">Sair</p>
+                </center>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-page">
+        <form>
+            <div class="edit-tv-mid-page-1">
+                <div class="edit-tv-box-picture">
+                </div>
+
+                <input id="update-televison" placeholder="Digite o nome da televisão" value="Televisão 1"/>
+            </div>
+            <div class="edit-tv-mid-page-2">
+                <div class="itens-add-video">
+                    <div class="televisions-to-add">
+
+                    </div>
+                    <div class="button-add-television">
+                        <center>
+                            <p id="add-icon">+</p>
+                        </center>
+                    </div>
+                </div>
+
+                <button type="submit" id="button-update-tv">Atualizar</button>
+            </div>
+        </form>
+    </main>
+</div>
