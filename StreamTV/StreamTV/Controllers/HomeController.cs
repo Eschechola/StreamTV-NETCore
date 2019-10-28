@@ -29,6 +29,8 @@ namespace StreamTV.Controllers
             return View();
         }
 
+        [Route("/Home/EditTelevision/{idTelevision}")]
+        [Route("/Home/EditTelevision")]
         public IActionResult EditTelevision(int idTelevision = 0)
         {
             return View();
