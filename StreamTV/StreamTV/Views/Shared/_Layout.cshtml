@@ -1,12 +1,36 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>@ViewBag.Title</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="~/css/@ViewBag.Css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+    <head>
+        <title>@ViewBag.Title</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="/css/@ViewBag.Css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+    </head>
     <body>
+        <nav class="responsive-menu-dashboard">
+            <div class="item-responsive-menu" onclick="window.location.href='/Home/Profile'">
+                <center>
+                    <img src="~/imgsSite/userIcon.png" />
+                </center>
+            </div>
+            <div class="item-responsive-menu" onclick="window.location.href='/Home/Index'">
+                <center>
+                    <img src="~/imgsSite/userTelevision.png" />
+                </center>
+            </div>
+            <div class="item-responsive-menu" onclick="window.location.href='/Home/Docs'">
+                <center>
+                    <img src="~/imgsSite/userDocs.png" />
+                </center>
+            </div>
+            <div class="item-responsive-menu" onclick="window.location.href='/Home/Logout'">
+                <center>
+                    <img src="~/imgsSite/userLogout.png" />
+                </center>
+            </div>
+        </nav>
         @RenderBody()
     </body>
 </html>

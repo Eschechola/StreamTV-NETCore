@@ -584,3 +584,282 @@ td {
     font-size: 1vw;
     transform: translateY(180%);
 }
+
+.notFound-background {
+    background-color: #03266A;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+}
+
+.notFound-background h1{
+    color: #fafafa;
+    width: 50%;
+    text-align: left;
+    margin-left: 30%;
+    transform: translateX(-50%);
+    margin-top: 10%;
+    position: relative;
+    font-size: 3vw;
+}
+
+.notFound-background p {
+    margin-left: 30%;
+    transform: translateX(-50%);
+    color: lightgray;
+    width: 50%;
+    text-align: left;
+    font-size: 2vw;
+}
+
+.image-robot {
+    width: 25%;
+    float: right;
+    animation: animateRobot 1s infinite;
+}
+
+@keyframes animateRobot{
+    0%{
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.notFound-background button {
+    background-color: #fafafa;
+    padding: 15px;
+    font-size: 1vw;
+    border: none;
+    border-radius: 5px;
+    color: #03266A;
+    margin-left: 5%;
+    font-weight: bold;
+    transition: 0.5s;
+    float: left;
+    outline: 0;
+}
+
+#button-secondary {
+    border: 1px solid #fafafa;
+    background-color: transparent;
+    color: #fafafa;
+    outline: 0;
+    transition: 0.5s;
+}
+
+.notFound-background button:hover {
+    cursor: pointer;
+    background-color: grey;
+    transition: 0.5s;
+}
+
+#button-secondary:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.responsive-menu-dashboard {
+    width: 100vw;
+    height: 8vh;
+    position: fixed !important;
+    z-index: 20;
+    background-color: #03266A;
+    margin-top: 92vh;
+    display: none;
+  }
+
+.item-responsive-menu{
+    width: 20%;
+    height: 100%;
+    margin-left: 3.5%;
+    float: left;
+}
+
+.item-responsive-menu img{
+    width: 60%;
+    margin-top: 50%;
+    transform: translateY(-65%);
+}
+
+@media only screen and (max-width: 1100px) {
+    .content {
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .content-page {
+        height: 100vh;
+        width: 100vw !important;
+    }
+
+
+    .left-nav {
+        display: none;
+    }
+
+    .content-page {
+        width: 110vw;
+        margin: 0;
+    }
+
+    .colunm-television {
+        width: 80%;
+        height: 70%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 5%;
+    }
+
+    .content-televisions {
+        height: 60vh;
+    }
+
+    #TitleTelevision {
+        font-size: 3vh;
+        margin-left: 52%;
+    }
+
+    #TextEditTelevision {
+        font-size: 4vh;
+    }
+
+    .manage-televison h3 {
+        font-size: 3vh;
+        width: 90%;
+        margin-top: 10%;
+    }
+
+    .manage-televison button {
+        width: 70%;
+        font-size: 3vh;
+        margin-top: 10%;
+    }
+
+    .responsive-menu-dashboard {
+        display: block;
+    }
+
+    .profile-page {
+        width: 100%;
+    }
+
+    .profile-box-picture {
+        background-color: transparent;
+    }
+
+    #NameUser {
+        font-size: 4vh;
+        margin-top: 0%;
+    }
+
+    table {
+        font-size: 2.8vh;
+        margin-top: 10%;
+    }
+
+    #button-update {
+        font-size: 3.5vh;
+        margin-top: 15%;
+    }
+
+    .profile-page-television {
+        width: 100vw;
+    }
+
+    .profile-television-item {
+        width: 80% !important;
+        margin-left: 50%;
+        transform: translate(-50%, -5%);
+    }
+
+    .profile-television-icon {
+        width: 90%;
+    }
+
+    .profile-television-item h2 {
+        font-size: 3vh;
+    }
+
+    #TitleUpdateAccount {
+        font-size: 3vh;
+        margin-top: 10%;
+        width: 90%;
+    }
+
+    .form-update input {
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.5vh;
+        margin-top: 12%;
+    }
+
+    .update-content {
+        width: 90%;
+    }
+
+    #button-UpdateData {
+        font-size: 2vh;
+        width: 80%;
+        padding: 20px;
+    }
+
+    .add-content {
+        width: 95vw;
+    }
+
+    #Title-AddContent {
+        font-size: 3vh;
+        width: 90%;
+        margin-top: 10%;
+    }
+
+    .form-add-television input[type="text"] {
+        width: 100%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.5vh;
+        margin-top: 12%;
+    }
+
+    .form-add-television{
+        width: 90%;
+    }
+
+    .add-televisions-box{
+        width: 100%;
+        height: 50vh;
+    }
+
+    #Title-AddVideo{
+        font-size: 2.5vh;
+        margin-top: 0;
+    }
+
+    .box-television{
+        width: 45%;
+        margin-left: 3%;
+        margin-top: 10%;
+        height: 0;
+    }
+
+    #button-add-television{
+        font-size: 3vh;
+        width: 90%;
+        margin-top: 5%;
+    }
+}

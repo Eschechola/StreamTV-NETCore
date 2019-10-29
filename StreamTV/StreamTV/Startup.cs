@@ -49,6 +49,7 @@ namespace StreamTV
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/NotFound");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
