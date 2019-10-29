@@ -425,8 +425,9 @@ td {
     height: 60%;
     position: fixed;
     background-color: rgba(0,0,0,0.9);
-    margin-top: -3% !important;
+    margin-top: -9% !important;
     opacity: 0;
+    z-index: 20;
     transition: 0.5s;
     border-radius: 8px;
 }
@@ -861,5 +862,66 @@ td {
         font-size: 3vh;
         width: 90%;
         margin-top: 5%;
+    }
+
+    .edit-tv-box-picture{
+        width: 70%;
+    }
+
+    #update-televison{
+        font-size: 2vh;
+        width: 70%;
+        margin-top: 15%;
+    }
+
+    .edit-tv-mid-page-2{
+        width: 100vw;
+        height: 150vh !important;
+    }
+
+    .televisions-to-add{
+        width: 100%;
+        height: 80vh;
+        margin-top: -10%;
+    }
+
+    .itens-add-video{
+        width: 90%;
+        height: 10%;
+    }
+
+    .content-videos {
+        width: 50%;
+        height: 20%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 5%;
+        float: left;
+    }
+
+    .video-add p{
+        font-size: 2.3vh;
+    }
+
+    .video-add {
+        height: 100%;
+    }
+
+    .button-add-television{
+        margin-top: 50%;
+        width: 95%;
+        height: 35%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #add-icon{
+        margin-top: 1%;
+        font-size: 3vh;
+    }
+
+    #button-update-tv{
+        width: 80%;
+        font-size: 2.5vh;
     }
 }
