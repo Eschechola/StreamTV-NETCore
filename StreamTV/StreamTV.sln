@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29009.5
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamTV", "StreamTV\StreamTV.csproj", "{5861D875-530F-4D3A-A83B-82B705A3506C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamTV", "StreamTV\StreamTV.csproj", "{A9DA67B0-971F-4B93-AA90-BE777723649C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5861D875-530F-4D3A-A83B-82B705A3506C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5861D875-530F-4D3A-A83B-82B705A3506C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5861D875-530F-4D3A-A83B-82B705A3506C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5861D875-530F-4D3A-A83B-82B705A3506C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9DA67B0-971F-4B93-AA90-BE777723649C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DA67B0-971F-4B93-AA90-BE777723649C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DA67B0-971F-4B93-AA90-BE777723649C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DA67B0-971F-4B93-AA90-BE777723649C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C2B68A22-18EE-4D9A-B79B-303D2BF68E12}
+		SolutionGuid = {CE662307-7EE2-42DB-AFED-DA92F8E252F4}
 	EndGlobalSection
 EndGlobal
