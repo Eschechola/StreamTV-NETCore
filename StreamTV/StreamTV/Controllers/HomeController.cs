@@ -41,8 +41,8 @@ namespace StreamTV.Controllers
             return View();
         }
 
-        [Route("NotFound")]
-        public IActionResult NotFound()
+        [Route("NotFoundPage")]
+        public IActionResult NotFoundPage()
         {
             return View();
         }
