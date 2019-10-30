@@ -821,6 +821,7 @@ td {
 
     .add-content {
         width: 95vw;
+        height: 105vh;
     }
 
     #Title-AddContent {
@@ -861,7 +862,7 @@ td {
     #button-add-television{
         font-size: 3vh;
         width: 90%;
-        margin-top: 5%;
+        margin-top: 20%;
     }
 
     .edit-tv-box-picture{
@@ -923,5 +924,69 @@ td {
     #button-update-tv{
         width: 80%;
         font-size: 2.5vh;
+    }
+
+    .box-television{
+        width: 80%;
+        height: 12%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #content-add-television{
+        height: 120vh;
+    }
+
+    .background-box-television{
+        margin:0;
+        transform: translateY(50%);
+        width: 100%;
+        height: 6vh;
+        position: relative;
+    }
+
+    #TextBackgroundAdd{
+        margin:0;
+        transform: translateY(20%);
+        font-size: 3vh;
+    }
+
+    #TextPlusAdd {
+        margin-top: 0%;
+        font-size: 3vh;
+    }
+
+    .notFound-background h1{
+        font-size: 4.5vh;
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .notFound-background p {
+        font-size: 3vh;
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .notFound-background button {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        font-size: 2.5vh;
+        margin-top: 10%;
+    }
+
+    #button-secondary{
+        border: 5px solid white;
+    }
+
+    .image-robot {
+        width: 50%;
+        float: none;
+        margin-top: 19%;
+        margin-left: 25%;
+        transform: translateX(-50%);
     }
 }
