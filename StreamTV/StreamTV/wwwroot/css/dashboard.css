@@ -677,7 +677,7 @@ td {
     position: fixed !important;
     z-index: 20;
     background-color: #03266A;
-    margin-top: 92vh;
+    margin-top: 0vh;
     display: none;
   }
 
@@ -693,6 +693,8 @@ td {
     margin-top: 50%;
     transform: translateY(-65%);
 }
+
+
 
 @media only screen and (max-width: 1100px) {
     .content {
@@ -715,6 +717,7 @@ td {
     .content-page {
         width: 110vw;
         margin: 0;
+        margin-top: 8vh;
     }
 
     .colunm-television {
@@ -773,7 +776,7 @@ td {
     }
 
     #button-update {
-        font-size: 3.5vh;
+        font-size: 3vh;
         margin-top: 15%;
     }
 
