@@ -5,12 +5,22 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="/css/@ViewBag.Css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-
+        <script type="text/javascript" src="~/js/dashboard.js"></script>
     </head>
     <body>
+        <div class="mid-menu-responsive">
+            <ul>
+                <li onclick="window.location.href='/Home/Profile'">Perfil</li>
+                <li onclick="window.location.href='/Home/Index'">Dashboard</li>
+                <li onclick="window.location.href='/Home/Docs'">Documentação</li>
+                <li onclick="window.location.href='/Home/Logout'">Sair</li>
+            </ul>
+        </div>
+        <div class="background-menu-responsive" onclick="FecharMenu()">
+
+        </div>
         <nav class="responsive-menu-dashboard">
-            <div class="item-responsive-menu" onclick="window.location.href='/Home/Profile'">
+            <div class="item-responsive-menu" onclick="AbrirMenu()">
                 <center>
                     <img src="~/imgsSite/responsiveMenu.png" />
                 </center>
