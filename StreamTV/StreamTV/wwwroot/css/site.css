@@ -107,7 +107,7 @@ body{
 .text-start-home{
     width: 100vw;
     height: 31vh;
-    margin-top: 2%;
+    margin-top: 0%;
     position: relative;
 }
 
@@ -119,6 +119,7 @@ body{
     text-align: center;
     font-size: 2.5vw;
     animation: opacity 4s;
+    margin-top: -2%;
 }
 
 
@@ -152,7 +153,7 @@ body{
 
 .image-start-page img{
     width: 50%;
-    margin-top: 1%;
+    margin-top: 4%;
 }
 
 .mid-page{
@@ -197,13 +198,120 @@ body{
 .mid-page-1{
     width: 100vw;
     height: 100vh;
+    background-color: white;
     position: relative;
-    background-color: #fafafa;
 }
 
 .title-mid-page-1{
     width: 100vw;
     height: 25vh;
-    background-color: red;
     margin-top: 10%;
+}
+
+.title-mid-page-1 h2{
+    font-size: 5.5vh;
+    color: #03266A;
+    width: 50vw;
+    margin-top: 15%;
+}
+
+.title-mid-page-1 h3{
+    font-size: 3.5vh;
+    margin-top: 5%;
+}
+
+.block-left-right-mid {
+    width: 25vw;
+    height: 120vh;
+    background-color: #03266A;
+    float: left;
+    position: relative;
+    margin-top: 8%;
+    margin-left: 0%;
+}
+
+.left-block {
+    transform: rotate(-55deg);
+}
+
+.right-block {
+    transform: rotate(55deg);
+}
+
+.content-mid-page {
+    width: 50vw;
+    height: 40vh;
+    float: left;
+    position: relative;
+}
+
+.content-mid-page button{
+    border: 2px solid #03266A;
+    outline: 0 !important;
+    margin-top: 20%;
+    padding: 15px;
+    width: 35%;
+    color: #fafafa;
+    background-color: #03266A;
+    border-radius: 30px;
+    font-size: 2vh;
+    transition: 0.5s;
+}
+
+.content-mid-page button:hover{
+    background-color: white;
+    color: #03266A;
+    transition: 0.5s;
+}
+
+.mid-page-2 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #03266A;
+    position: absolute;
+}
+
+.mid-page-2 h1{
+    color: #fafafa;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    font-size: 5vh;
+    text-align: center;
+    margin-top: 10%;
+    padding-bottom: 2%;
+}
+
+.line-center{
+    width: 20%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background-color: white;
+    position: relative;
+}
+
+.row{
+    margin-top: 10% !important;
+}
+
+.col{
+    height: 50vh;
+}
+
+.col img{
+    width: 32% !important;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.col p{
+    color: #fafafa;
+    font-size: 2vh;
+    width: 70%;
+}
+
+#text-icon{
+    margin-top: 8%;
+    font-size: 3vh !important;
 }
