@@ -40,7 +40,7 @@ namespace StreamTV
                 app.UseHsts();
             }
 
-            app.UseStatusCodePagesWithReExecute("/NotFoundPage");
+            app.UseStatusCodePagesWithReExecute("/NotFoundPage/NotFoundPage");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -52,7 +52,7 @@ namespace StreamTV
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Site}/{action=Index}/{id?}");
             });
         }
     }
