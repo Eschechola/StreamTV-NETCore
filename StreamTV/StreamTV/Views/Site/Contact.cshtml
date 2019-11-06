@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Contato - StreamTV";
+    ViewBag.Css = "site.css";
+}
+
+<div class="content">
+    <div class="content-inicio">
+        <nav class="nav-site">
+            <div class="logo-navbar">
+
+            </div>
+
+            <div class="itens-navbar">
+                <div class="text-itens-navbar">
+                    <p id="text-login" onclick="window.location.href='/Login'">Login</p>
+                </div>
+
+                <div class="text-itens-navbar">
+                    <p onclick="window.location.href='/Contact'">Contato</p>
+                </div>
+
+                <div class="text-itens-navbar" onclick="window.location.href='/Home/Docs'">
+                    <p>Docs</p>
+                </div>
+
+                <div class="text-itens-navbar">
+                    <p onclick="window.location.href='/'">Início</p>
+                </div>
+            </div>
+        </nav>
+
+        <div class="contact">
+            <h2>Preencha as informações abaixo e entraremos em contato.</h2>
+            <form method="post" class="form-contact">
+                <input type="text" placeholder="* Digite seu nome completo" />
+                <br>
+                <input type="text" placeholder="* Digite seu melhor email" />
+                <br>
+                <input type="text" placeholder="Digite o nome da sua empresa" />
+                <br>
+                <textarea type="text" placeholder="* Explique sua situação problema..." ></textarea>
+                <br>
+                <button type="reset" id="btn-clear-contact">Limpar</button>
+                <button type="button" id="btn-send-contact">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

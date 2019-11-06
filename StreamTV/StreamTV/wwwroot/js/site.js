@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿//$('.content').scroll(function () {
+//    var posicao = $('.content').scrollTop();
+//    var posicaoArredondada = Math.round(posicao / 100);
+//    var marginMenu = '0%';
 
-// Write your JavaScript code.
+
+//    if (posicaoArredondada >= 3) {
+//        marginMenu = '-15vh';
+//    }
+//    else {
+//        marginMenu = '0%'
+//    }
+
+//    $('.nav-hide-site').css('margin-top', marginMenu);
+//});
+

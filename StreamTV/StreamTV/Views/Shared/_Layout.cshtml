@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" href="/css/@ViewBag.Css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script type="text/javascript" src="~/js/dashboard.js"></script>
+        <script type="text/javascript" src="~/js/site.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="mid-menu-responsive">
@@ -27,5 +29,23 @@
             </div>
         </nav>
         @RenderBody()
+        <script>
+            $('.content').scroll(function () {
+                var posicao = $('.content').scrollTop();
+                var posicaoArredondada = Math.round(posicao / 100);
+                var marginMenu = '0%';
+
+
+                if (posicaoArredondada >= 5) {
+                    marginMenu = '0%'
+                }
+                else {
+                    marginMenu = '-15vh';
+                }
+
+                $('.nav-hide-site').css('margin-top', marginMenu);
+            });
+
+        </script>
     </body>
 </html>
