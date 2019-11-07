@@ -7,7 +7,7 @@
 <div class="content">
     <nav class="left-nav">
         <div class="menu-itens">
-            <div class="item-menu selected-menu" onclick="window.location.href ='/Home/Profile'">
+            <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Profile'; ShowLoad();">
                 <img src="/imgsSite/userIcon.png" />
                 <center>
                     <p id="TextUser">SENAI</p>
@@ -22,13 +22,13 @@
             <div class="item-menu opacity-off">
 
             </div>
-            <div class="item-menu" onclick="window.location.href ='/Home/Index'">
+            <div class="item-menu" onclick="window.location.href = '/Home/Index'; ShowLoad();">
                 <img src="/imgsSite/userTelevision.png" />
                 <center>
                     <p id="TextUser">Início</p>
                 </center>
             </div>
-            <div class="item-menu" onclick="window.location.href ='/Home/Docs'">
+            <div class="item-menu" onclick="window.location.href = '/Home/Docs'; ShowLoad();">
                 <img src="/imgsSite/userDocs.png" />
                 <center>
                     <p id="TextUser">Docs</p>
@@ -44,7 +44,7 @@
 
             </div>
 
-            <div class="item-menu" onclick="window.location.href ='/Home/Logout'">
+            <div class="item-menu" onclick="window.location.href = '/Home/Logout'; ShowLoad();">
                 <img src="/imgsSite/userLogout.png" />
                 <center>
                     <p id="TextUser">Sair</p>
@@ -66,7 +66,7 @@
                     <div class="televisions-to-add">
                         
                         <div class="content-videos">
-                            <div class="video-add" onclick="window.location.href='/Home/EditTelevision/0'">
+                            <div class="video-add" onclick="window.location.href = '/Home/EditTelevision/0'; ShowLoad();">
                                 <center>
                                     <p>Alterar</p>
                                 </center>

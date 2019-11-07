@@ -13,7 +13,14 @@
 
             <div class="itens-navbar">
                 <div class="text-itens-navbar">
-                    <p id="text-login" onclick="window.location.href='/Login'">Login</p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p id="text-login" onclick="window.location.href='/Home/Index'">Entrar</p>
+                    }
+                    else
+                    {
+                        <p id="text-login" onclick="window.location.href='/Login'">Login</p>
+                    }
                 </div>
 
                 <div class="text-itens-navbar">
@@ -38,7 +45,14 @@
 
             <div class="itens-navbar">
                 <div class="text-itens-navbar">
-                    <p id="text-login" onclick="window.location.href='/Login'">Login</p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p id="text-login" onclick="window.location.href='/Home/Index'">Entrar</p>
+                    }
+                    else
+                    {
+                        <p id="text-login" onclick="window.location.href='/Login'">Login</p>
+                    }
                 </div>
 
                 <div class="text-itens-navbar">

@@ -10,12 +10,22 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
+        <div class="loading-page">
+            <center>
+                <div class="loading-item">
+
+                </div>
+                <br />
+
+                <p id="textLoading">Carregando...</p>
+            </center>
+        </div>
         <div class="mid-menu-responsive">
             <ul>
-                <li onclick="window.location.href='/Home/Profile'">Perfil</li>
-                <li onclick="window.location.href='/Home/Index'">Dashboard</li>
-                <li onclick="window.location.href='/Home/Docs'">Documentação</li>
-                <li onclick="window.location.href='/Home/Logout'">Sair</li>
+                <li onclick="window.location.href = '/Home/Profile';ShowLoad();">Perfil</li>
+                <li onclick="window.location.href = '/Home/Index';ShowLoad();">Dashboard</li>
+                <li onclick="window.location.href = '/Home/Docs';ShowLoad();">Documentação</li>
+                <li onclick="window.location.href = '/Home/Logout';ShowLoad();">Sair</li>
             </ul>
         </div>
         <div class="background-menu-responsive" onclick="FecharMenu()">

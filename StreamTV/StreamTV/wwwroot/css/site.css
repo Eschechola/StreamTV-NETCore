@@ -666,3 +666,65 @@ body{
     color: #fafafa;
     transition: 0.5s;
 }
+
+.loading-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(11, 2, 90, 0.8);
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+.loading-item {
+    margin-top: 25%;
+    transform: translateY(-50%);
+    position: relative;
+    border: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    border-bottom: 5px solid #ffffff;
+    width: 70px;
+    border-radius: 70px;
+    height: 70px;
+    animation: rotateLoading 0.7s infinite;
+    animation-timing-function: linear;
+}
+
+#textLoading {
+    color: #fafafa;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 3vh;
+}
+
+@keyframes rotateLoading {
+    to{
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+.erro-message {
+    width: 300px;
+    height: 70px;
+    position: fixed;
+    background-color: #fafafa;
+    color: #03266A;
+    z-index: 20;
+    border-radius: 10px;
+    margin-left: -350px;
+    margin-top: 45%;
+    transition: 1.5s;
+}
+
+#text-error{
+    margin-top: 12%;
+    transform:translateY(-50%);
+    position: relative;
+    font-size: 2vh;
+    font-weight: bold;
+    width: 88%;
+    opacity: 0;
+}

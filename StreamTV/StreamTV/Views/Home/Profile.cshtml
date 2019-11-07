@@ -1,4 +1,5 @@
-﻿
+﻿@model StreamTV.Models.Cliente
+
 @{
     ViewBag.Title = "Profile - StreamTV";
     ViewBag.Css = "dashboard.css";
@@ -7,7 +8,7 @@
     <div class="content">
         <nav class="left-nav">
             <div class="menu-itens">
-                <div class="item-menu selected-menu" onclick="window.location.href ='/Home/Profile'">
+                <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Profile'; ShowLoad();">
                     <img src="/imgsSite/userIcon.png" />
                     <center>
                         <p id="TextUser">SENAI</p>
@@ -22,13 +23,13 @@
                 <div class="item-menu opacity-off">
 
                 </div>
-                <div class="item-menu" onclick="window.location.href ='/Home/Index'">
+                <div class="item-menu" onclick="window.location.href = '/Home/Index';ShowLoad();">
                     <img src="/imgsSite/userTelevision.png" />
                     <center>
                         <p id="TextUser">Início</p>
                     </center>
                 </div>
-                <div class="item-menu" onclick="window.location.href ='/Home/Docs'">
+                <div class="item-menu" onclick="window.location.href = '/Home/Docs';ShowLoad();">
                     <img src="/imgsSite/userDocs.png" />
                     <center>
                         <p id="TextUser">Docs</p>
@@ -44,7 +45,7 @@
 
                 </div>
 
-                <div class="item-menu" onclick="window.location.href ='/Home/Logout'">
+                <div class="item-menu" onclick="window.location.href = '/Home/Logout';ShowLoad();">
                     <img src="/imgsSite/userLogout.png" />
                     <center>
                         <p id="TextUser">Sair</p>
@@ -59,25 +60,25 @@
                     <img src="/imgsSite/userIcon.png" />
                 </div>
 
-                <h2 id="NameUser">SENAI "Ary Torres" 1.12</h2>
+                <h2 id="NameUser">@Model.Instituicao</h2>
                 <br />
 
                 <table>
                     <tr>
                         <th>Dispositivos: </th>
-                        <td>4</td>
+                        <td>@Model.QtTelevisoes</td>
                     </tr>
                     <tr>
                         <th>Responsável: </th>
-                        <td>Fulano</td>
+                        <td>@Model.Responsavel</td>
                     </tr>
                     <tr>
                         <th>Email: </th>
-                        <td>senai@112.com.br</td>
+                        <td>@Model.Email</td>
                     </tr>
                     <tr>
                         <th>Telefone: </th>
-                        <td>(11) 99999-9999</td>
+                        <td>@Model.Telefone</td>
                     </tr>
                     <tr>
                         <th>Cadastro em:</th>
@@ -91,77 +92,22 @@
             </div>
 
             <div class="profile-page-television">
-                <div class="profile-television-item" onclick="window.location.href='/Home/EditTelevision/0'">
-                    <div class="profile-television-icon">
-                        <div class="background-black-television">
-                            <center>
-                                <p id="TextEditTelevision">Editar<br>▾</p>
-                            </center>
+                @for(int i = 0; i < Model.QtTelevisoes; i++)
+                { 
+                    <div class="profile-television-item" onclick="window.location.href='/Home/EditTelevision/@i'">
+                        <div class="profile-television-icon">
+                            <div class="background-black-television">
+                                <center>
+                                    <p id="TextEditTelevision">Editar<br>▾</p>
+                                </center>
+                            </div>
                         </div>
+
+                        <h2>Televisão @{
+                            Write(i + 1);
+                        }</h2>
                     </div>
-
-                    <h2>Televisão 1</h2>
-                </div>
-
-                <div class="profile-television-item">
-                    <div class="profile-television-icon" onclick="window.location.href='/Home/EditTelevision/1'">
-                        <div class="background-black-television">
-                            <center>
-                                <p id="TextEditTelevision">Editar<br>▾</p>
-                            </center>
-                        </div>
-                    </div>
-
-                    <h2>Televisão 2</h2>
-                </div>
-
-                <div class="profile-television-item">
-                    <div class="profile-television-icon" onclick="window.location.href='/Home/EditTelevision/2'">
-                        <div class="background-black-television">
-                            <center>
-                                <p id="TextEditTelevision">Editar<br>▾</p>
-                            </center>
-                        </div>
-                    </div>
-
-                    <h2>Televisão 3</h2>
-                </div>
-
-                <div class="profile-television-item">
-                    <div class="profile-television-icon" onclick="window.location.href='/Home/EditTelevision/3'">
-                        <div class="background-black-television">
-                            <center>
-                                <p id="TextEditTelevision">Editar<br>▾</p>
-                            </center>
-                        </div>
-                    </div>
-
-                    <h2>Televisão 4</h2>
-                </div>
-
-                <div class="profile-television-item">
-                    <div class="profile-television-icon" onclick="window.location.href='/Home/EditTelevision/4'">
-                        <div class="background-black-television">
-                            <center>
-                                <p id="TextEditTelevision">Editar<br>▾</p>
-                            </center>
-                        </div>
-                    </div>
-
-                    <h2>Televisão 5</h2>
-                </div>
-
-                <div class="profile-television-item">
-                    <div class="profile-television-icon" onclick="window.location.href='/Home/EditTelevision/5'">
-                        <div class="background-black-television">
-                            <center>
-                                <p id="TextEditTelevision">Editar<br>▾</p>
-                            </center>
-                        </div>
-                    </div>
-
-                    <h2>Televisão 6</h2>
-                </div>
+                }
             </div>
         </main>
 </div>

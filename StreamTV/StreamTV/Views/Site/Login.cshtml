@@ -4,6 +4,22 @@
     ViewBag.Css = "site.css";
 }
 
+@if (ViewBag.Erro != null)
+{
+    <script>
+        setTimeout(abrirModalError, 500);
+    </script>
+
+    <div class="erro-message">
+        <center>
+            <p id="text-error">@ViewBag.Erro</p>
+        </center>
+        <script>
+            setTimeout(fecharModalError, 8000);
+        </script>
+    </div>
+}
+
 <div class="content">
     <div class="content-inicio">
         <nav class="nav-site">
@@ -33,13 +49,13 @@
         <div class="login">
             <h2>Preencha com suas credenciais</h2>
             <form method="post" class="form-login">
-                <input type="text" placeholder="* Digite seu email" />
+                <input type="text" name="email" required placeholder="* Digite seu email" />
                 <br />
-                <input type="password" placeholder="* Digite sua senha" />
+                <input type="password" name="senha" required placeholder="* Digite sua senha" />
                 <br />
                 <p id="forgot" onclick="window.location.href='/ForgotPassword'">Esqueceu sua senha?</p>
                 <br />
-                <button type="button" onclick="window.location.href='/Home/Index'">Logar</button>
+                <button type="submit" onclick="ShowLoad()">Logar</button>
             </form>
         </div>
     </div>
