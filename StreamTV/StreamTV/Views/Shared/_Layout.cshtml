@@ -20,6 +20,25 @@
                 <p id="textLoading">Carregando...</p>
             </center>
         </div>
+        <div class="site-menu-responsive">
+            <ul>
+                <li onclick="window.location.href = '/';ShowLoad();">Início</li>
+                <li onclick="window.location.href = '/Home/Docs';ShowLoad();">Docs</li>
+                <li onclick="window.location.href = '/Contact';ShowLoad();">Contato</li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li onclick="window.location.href = '/Home/Index'; ShowLoad();">Entrar</li>
+                }
+                else
+                {
+                    <li onclick="window.location.href = '/Login'; ShowLoad();">Login</li>
+                }
+            </ul>
+        </div>
+        <div class="background-menu-responsive" onclick="FecharMenuSite()"></div>
+
+
         <div class="mid-menu-responsive">
             <ul>
                 <li onclick="window.location.href = '/Home/Profile';ShowLoad();">Perfil</li>
