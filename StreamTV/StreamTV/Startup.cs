@@ -34,6 +34,7 @@ namespace StreamTV
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
 
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -65,7 +66,13 @@ namespace StreamTV
 
             app.UseStatusCodePagesWithReExecute("/NotFoundPage/NotFoundPage");
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+
+            app.UseStaticFiles(
+                new StaticFileOptions
+                {
+                    ServeUnknownFileTypes = true,
+                }
+            );
 
             app.UseRouting();
             app.UseAuthentication();

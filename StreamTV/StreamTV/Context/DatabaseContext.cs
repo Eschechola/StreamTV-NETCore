@@ -76,6 +76,11 @@ namespace StreamTV.Context
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
+                entity.Property(e => e.Codigo)
+                    .HasColumnName("codigo")
+                    .HasColumnType("varchar(5)")
+                    .IsRequired();
+
                 entity.Property(e => e.FkIdCliente)
                     .HasColumnName("fk_id_cliente")
                     .HasColumnType("int(11)");
