@@ -1,4 +1,6 @@
-﻿@{
+﻿@model StreamTV.Models.Televisoes
+
+@{
     ViewBag.Title = "Update Account - StreamTV";
     ViewBag.Css = "dashboard.css";
 }
@@ -57,7 +59,7 @@
             <h2 id="Title-AddContent">Preencha algumas informações para poder adicionar um novo dispositivo</h2>
 
             <form class="form-add-television" method="post" enctype="multipart/form-data">
-                <input type="text" placeholder="Digite o nome do dispositivo"/>
+                <input type="text" name="nome" placeholder="Digite o nome do dispositivo"/>
                 <div class="add-televisions-box">
                     <center>
                         <h2 id="Title-AddVideo">Selecione os vídeos</h2>
@@ -65,6 +67,7 @@
                     <div class="box-television">
                         <center>
                             <div class="background-box-television">
+                                <input type="file" class="file-input" name="video1" onchange="SelecionarArquivo(0);" />
                                 <p id="TextBackgroundAdd">Adicionar</p>
                             </div>
 
@@ -74,6 +77,7 @@
                     <div class="box-television">
                         <center>
                             <div class="background-box-television">
+                                <input type="file" class="file-input" name="video2" onchange="SelecionarArquivo(1);" />
                                 <p id="TextBackgroundAdd">Adicionar</p>
                             </div>
 
@@ -83,6 +87,7 @@
                     <div class="box-television">
                         <center>
                             <div class="background-box-television">
+                                <input type="file" class="file-input" name="video3" onchange="SelecionarArquivo(2);" />
                                 <p id="TextBackgroundAdd">Adicionar</p>
                             </div>
                             <p id="TextPlusAdd">+</p>
@@ -92,6 +97,7 @@
                     <div class="box-television">
                         <center>
                             <div class="background-box-television">
+                                <input type="file" class="file-input" name="video4" onchange="SelecionarArquivo(3);" />
                                 <p id="TextBackgroundAdd">Adicionar</p>
                             </div>
                             <p id="TextPlusAdd">+</p>
@@ -99,7 +105,7 @@
                     </div>
                 </div>
 
-                <button type="submit" id="button-add-television">Adicionar</button>
+                <button type="submit" id="button-add-television" onclick="ShowLoad()">Adicionar</button>
             </form>
         </div>
     </main>

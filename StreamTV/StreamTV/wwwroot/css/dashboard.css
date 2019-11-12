@@ -26,7 +26,22 @@ body {
     padding: 0;
 }
 
-.content{
+.file-input{
+    position: absolute;
+    z-index: 30;
+    cursor: pointer;
+    width: 100% !important;
+}
+
+input[type=file]{
+    width: 100% !important;
+    border: 1px solid red;
+    height: 100%;
+    margin-left: -50%;
+    opacity: 0;
+}
+
+.content {
     width: 100vw;
     height: auto;
     position: absolute;

@@ -76,6 +76,7 @@ namespace StreamTV.Controllers
         }
 
         [Authorize]
+        [RequestFormLimits(MultipartBodyLengthLimit = 999999999)]
         public IActionResult AddTelevision()
         {
             return View();
@@ -83,6 +84,7 @@ namespace StreamTV.Controllers
 
         [Authorize]
         [HttpPost]
+        [RequestFormLimits(MultipartBodyLengthLimit = 999999999)]
         public IActionResult AddTelevision(Televisoes televisao)
         {
             try
