@@ -2,6 +2,6 @@
 {
     public class DefaultRoute
     {
-        public static string Route = "https://www.senaitvs.herokuapp.com/Videos/";
+        public static string Route = "https://senaitvs.herokuapp.com/Videos/";
     }
 }
