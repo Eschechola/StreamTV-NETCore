@@ -3,6 +3,7 @@ using StreamTV.Context;
 using StreamTV.Interfaces;
 using StreamTV.Models;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace StreamTV.Application
 {
@@ -12,6 +13,19 @@ namespace StreamTV.Application
         public TelevisoesApplication(DatabaseContext context)
         {
             _context = context;
+        }
+
+        public List<Televisoes> GetAllByIdUser(int idUsuario)
+        {
+            try
+            {
+                var listaDeTelevisoes = _context.Televisoes.Where(x => x.FkIdCliente.Equals(idUsuario));
+                return listaDeTelevisoes.ToList();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public Televisoes GetByCode(string code)
@@ -42,6 +56,7 @@ namespace StreamTV.Application
                 return "Erro ao se comunicar com a base de dados";
             }
         }
+
 
 
     }

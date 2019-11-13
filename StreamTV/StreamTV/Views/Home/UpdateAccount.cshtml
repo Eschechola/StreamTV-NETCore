@@ -1,4 +1,5 @@
-﻿
+﻿@model StreamTV.Models.Cliente
+
 @{
     ViewBag.Title = "Update Account - StreamTV";
     ViewBag.Css = "dashboard.css";
@@ -58,12 +59,24 @@
             <h2 id="TitleUpdateAccount">Confira se seus dados estão corretos e altere-os</h2>
 
             <form class="form-update">
-                <input placeholder="Digite o nome da instituição" value="SENAI Ary Torres 1.12"/>
-                <input placeholder="Digite o nome do responsável" value="Fulano"/>
-                <input readonly placeholder="Dispositivos cadastrados" value="Dispositivos cadastrados: 5"/>
-                <input readonly placeholder="Digite sua senha" type="password" />
-                <input placeholder="Digite seu telefone" value="(11) 99999-9999"/>
-                <input placeholder="Digite seu email" value="senai@112.com.br"/>
+                <input placeholder="Digite o nome da instituição" value="@Model.Instituicao" />
+                <br>
+                @Html.ValidationMessageFor(x => x.Instituicao)
+                <input placeholder="Digite o nome do responsável" value="@Model.Responsavel" />
+                <br>
+                @Html.ValidationMessageFor(x => x.Responsavel)
+                <input readonly placeholder="Dispositivos cadastrados" value="@Model.QtTelevisoes" />
+                <br>
+                @Html.ValidationMessageFor(x => x.QtTelevisoes)
+                <input placeholder="Digite sua senha" type="password" />
+                <br>
+                @Html.ValidationMessageFor(x => x.Senha)
+                <input placeholder="Digite seu telefone" value="(11) 99999-9999" @Model.Telefone />
+                <br>
+                @Html.ValidationMessageFor(x => x.Telefone)
+                <input placeholder="Digite seu email" value="@Model.Email" />
+                <br>
+                @Html.ValidationMessageFor(x => x.Email)
 
                 <button type="submit" id="button-UpdateData">Alterar Dados</button>
             </form>

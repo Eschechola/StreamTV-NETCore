@@ -86,15 +86,15 @@
                     </tr>
                 </table>
 
-                <button id="button-update" onclick="window.location.href='/Home/UpdateAccount'">
+                <button id="button-update" onclick="window.location.href = '/Home/UpdateAccount'; ShowLoad();">
                     Alterar dados
                 </button>
             </div>
 
             <div class="profile-page-television">
-                @for(int i = 0; i < Model.QtTelevisoes; i++)
+                @foreach(var tv in ViewBag.Televisoes)
                 { 
-                    <div class="profile-television-item" onclick="window.location.href='/Home/EditTelevision/@i'">
+                    <div class="profile-television-item" onclick="window.location.href='/Home/EditTelevision/@tv.Id'">
                         <div class="profile-television-icon">
                             <div class="background-black-television">
                                 <center>
@@ -103,9 +103,7 @@
                             </div>
                         </div>
 
-                        <h2>Televisão @{
-                            Write(i + 1);
-                        }</h2>
+                        <h2>@tv.Nome</h2>
                     </div>
                 }
             </div>

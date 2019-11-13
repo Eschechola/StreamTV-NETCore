@@ -26,9 +26,9 @@ namespace StreamTV.Utilities.Files
 
             try
             {
-                foreach (var arquivo in arquivos)
+                for(int i = 0; i < arquivos.Count; i++)
                 {
-                    if (arquivo.Length > 0)
+                    if (arquivos[i].Length > 0)
                     {
                         //define o nome do arquivo como a hora atual
                         var nomeArquivo = DateTime.Now.ToString();
@@ -47,11 +47,11 @@ namespace StreamTV.Utilities.Files
                         //copia a foto enviada e cola no diretório de armazenamento informado
                         using (FileStream streamDeDados = File.Create(diretorioDeArmazenamento))
                         {
-                            arquivo.CopyTo(streamDeDados);
-                            streamDeDados.Flush();
+                            arquivos[i].CopyTo(streamDeDados);
+                            //streamDeDados.Flush();
                         }
 
-                        listaDiretorioVideos.Add("/Videos/" + nomeArquivo);
+                        listaDiretorioVideos.Add(nomeArquivo);
                     }
                 }
             }

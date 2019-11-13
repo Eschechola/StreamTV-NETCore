@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<StreamTV.Models.Televisoes>
+
+@{
     ViewBag.Title = "Dashboard - StreamTV";
     ViewBag.Css = "dashboard.css";
 }
@@ -54,60 +56,28 @@
 
     <main class="content-page">
         <div class="content-televisions">
-            <div class="colunm-television" onclick="window.location.href = '/Home/EditTelevision/0'; ShowLoad();">
-                <div class="item-colunm-television">
-                    <div class="background-black-television">
-                        <center>
-                            <p id="TextEditTelevision">Editar<br>▾</p>
-                        </center>
+            @if (ViewBag.Erro != null)
+            {
+                <center>
+                    <h2>@ViewBag.Erro</h2>
+                </center>
+            }
+            else
+            {
+                foreach (var tv in Model)
+                {
+                    <div class="colunm-television" onclick="window.location.href = '/Home/EditTelevision/@tv.Id'; ShowLoad();">
+                        <div class="item-colunm-television">
+                            <div class="background-black-television">
+                                <center>
+                                    <p id="TextEditTelevision">Editar<br>▾</p>
+                                </center>
+                            </div>
+                        </div>
+                        <p id="TitleTelevision">@tv.Nome</p>
                     </div>
-                </div>
-                <p id="TitleTelevision">Televisão 1</p>
-            </div>
-
-            <div class="colunm-television" onclick="window.location.href = '/Home/EditTelevision/1'; ShowLoad();">
-                <div class="item-colunm-television">
-                    <div class="background-black-television">
-                        <center>
-                            <p id="TextEditTelevision">Editar<br>▾</p>
-                        </center>
-                    </div>
-                </div>
-                <p id="TitleTelevision">Televisão 2</p>
-            </div>
-
-            <div class="colunm-television" onclick="window.location.href = '/Home/EditTelevision/2'; ShowLoad();">
-                <div class="item-colunm-television">
-                    <div class="background-black-television">
-                        <center>
-                            <p id="TextEditTelevision">Editar<br>▾</p>
-                        </center>
-                    </div>
-                </div>
-                <p id="TitleTelevision">Televisão 3</p>
-            </div>
-
-            <div class="colunm-television" onclick="window.location.href = '/Home/EditTelevision/3'; ShowLoad();">
-                <div class="item-colunm-television">
-                    <div class="background-black-television">
-                        <center>
-                            <p id="TextEditTelevision">Editar<br>▾</p>
-                        </center>
-                    </div>
-                </div>
-                <p id="TitleTelevision">Televisão 4</p>
-            </div>
-
-            <div class="colunm-television" onclick="window.location.href = '/Home/EditTelevision/4'; ShowLoad();">
-                <div class="item-colunm-television">
-                    <div class="background-black-television">
-                        <center>
-                            <p id="TextEditTelevision">Editar<br>▾</p>
-                        </center>
-                    </div>
-                </div>
-                <p id="TitleTelevision">Televisão 5</p>
-            </div>
+                }
+            }
         </div>
 
         <div class="manage-televison">
