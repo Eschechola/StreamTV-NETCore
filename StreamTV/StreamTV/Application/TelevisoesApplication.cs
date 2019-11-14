@@ -57,7 +57,48 @@ namespace StreamTV.Application
             }
         }
 
+        public override Televisoes GetById(int id)
+        {
+            try
+            {
+                var televisao = _context.Televisoes.Where(x => x.Id.Equals(id));
+                return televisao.ToList().FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
+        public override string Update(Televisoes televisao)
+        {
+            try
+            {
+                _context.Update(televisao);
+                _context.SaveChanges();
+
+                return "Nome atualizado com sucesso";
+            }
+            catch (Exception)
+            {
+                return "Erro ao se comunicar com a base de dados";
+            }
+        }
+
+        public override string Delete(Televisoes televisao)
+        {
+            try
+            {
+                _context.Remove(televisao);
+                _context.SaveChanges();
+
+                return "Televisão deletada com sucesso";
+            }
+            catch (Exception)
+            {
+                return "Erro ao se comunicar com a base de dados";
+            }
+        }
 
     }
 }

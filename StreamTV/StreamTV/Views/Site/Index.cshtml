@@ -16,7 +16,7 @@
                 <div class="text-itens-navbar">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <p id="text-login" onclick="window.location.href='/Home/Index'">Entrar</p>
+                        <p id="text-login" onclick="window.location.href = '/Home/Index'; ShowLoad();">Entre</p>
                     }
                     else
                     {
@@ -48,7 +48,7 @@
                 <div class="text-itens-navbar">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <p id="text-login" onclick="window.location.href='/Home/Index'">Entrar</p>
+                        <p id="text-login" onclick="window.location.href = '/Home/Index'; ShowLoad();">Entre</p>
                     }
                     else
                     {
@@ -95,7 +95,7 @@
                     <div class="block-left-right-mid left-block"></div>
                     <div class="content-mid-page">
                         <center>
-                            <button onclick="window.location.href='/Contact'">Entrar em contato</button>
+                            <button onclick="window.location.href='/Contact'">Entre em contato</button>
                         </center>
                     </div>
                     <div class="block-left-right-mid right-block"></div>

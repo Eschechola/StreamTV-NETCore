@@ -8,7 +8,6 @@ namespace StreamTV.Models
         public int Id { get; set; }
         public int? FkIdTelevisao { get; set; }
         public string Url { get; set; }
-        public sbyte? Modificado { get; set; }
 
         public virtual Televisoes FkIdTelevisaoNavigation { get; set; }
     }

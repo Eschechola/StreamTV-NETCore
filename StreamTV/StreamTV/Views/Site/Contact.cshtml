@@ -17,7 +17,7 @@
                 <div class="text-itens-navbar">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <p id="text-login" onclick="window.location.href='/Home/Index'">Painel</p>
+                        <p id="text-login" onclick="window.location.href = '/Home/Index'; ShowLoad();">Entre</p>
                     }
                     else
                     {
@@ -40,7 +40,7 @@
         </nav>
 
         <div class="contact">
-            <h2>Preencha as informações abaixo e entraremos em contato.</h2>
+            <h2>Preencha as informações abaixo e Entreemos em contato.</h2>
             <form method="post" class="form-contact">
                 <input type="text" placeholder="* Digite seu nome completo" />
                 <br>

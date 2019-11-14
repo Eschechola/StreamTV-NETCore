@@ -60,22 +60,22 @@
 
             <form class="form-update">
                 <input placeholder="Digite o nome da instituição" value="@Model.Instituicao" />
-                <br>
+                 \n
                 @Html.ValidationMessageFor(x => x.Instituicao)
                 <input placeholder="Digite o nome do responsável" value="@Model.Responsavel" />
-                <br>
+                 \n
                 @Html.ValidationMessageFor(x => x.Responsavel)
                 <input readonly placeholder="Dispositivos cadastrados" value="@Model.QtTelevisoes" />
-                <br>
+                 \n
                 @Html.ValidationMessageFor(x => x.QtTelevisoes)
                 <input placeholder="Digite sua senha" type="password" />
-                <br>
+                 \n
                 @Html.ValidationMessageFor(x => x.Senha)
                 <input placeholder="Digite seu telefone" value="(11) 99999-9999" @Model.Telefone />
-                <br>
+                 \n
                 @Html.ValidationMessageFor(x => x.Telefone)
                 <input placeholder="Digite seu email" value="@Model.Email" />
-                <br>
+                 \n
                 @Html.ValidationMessageFor(x => x.Email)
 
                 <button type="submit" id="button-UpdateData">Alterar Dados</button>

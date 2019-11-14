@@ -422,7 +422,11 @@ td {
     margin-left: 50%;
     transform: translateX(-50%);
     background-color: rgb(64,64,64);
-    margin-top: 10%;
+    margin-top: 6%;
+}
+
+.field-validation-error{
+    color: red !important;
 }
 
 .box-television {
@@ -513,6 +517,23 @@ td {
     background-color: #ededed;
 }
 
+.edit-tv-box-picture img {
+    margin-top: 70%;
+    width: 26%;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.edit-tv-box-picture h3{
+    margin-top: 50%;
+    margin-left: 50%;
+    line-height: 1.6;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 3vh;
+}
+
 #update-televison {
     width: 40%;
     float: left;
@@ -534,7 +555,8 @@ td {
     transform: translateY(25%);
     height: 22vh;
     float: left;
-    border-radius: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .button-add-television {
@@ -585,6 +607,15 @@ td {
     height: 100%;
     margin-left: 5.5%;
     float: left;
+}
+
+.content-videos img{
+    width: 25% !important;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10%;
+    position: relative;
+    cursor: pointer;
 }
 
 .video-add{
@@ -782,6 +813,39 @@ td {
     margin-left: 50%;
     transform: translateX(-50%);
     font-size: 3vh;
+}
+
+.warning {
+    background-color: rgba(0,0,0,0.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 120;
+}
+
+.modal-warning {
+    width: 35vw;
+    height: 30vh;
+    background-color: #F5F5F7;
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 25%;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+}
+
+.modal-warning h3{
+    position: relative;
+    color: dimgray;
+    padding-bottom: 10px;
+    border-bottom: 1px solid dimgray;
+    margin-top: 2%;
+    width: 80%;
+}
+
+.modal-warning button{
+    position: relative;
+    margin-top: 5%;
 }
 
 @keyframes rotateLoading {

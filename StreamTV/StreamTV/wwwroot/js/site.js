@@ -49,8 +49,3 @@ function FecharMenuSite() {
     }
 }
 
-function SelecionarArquivo(idBloco) {
-    var bloco = document.getElementsByClassName('box-television')[idBloco];
-    bloco.style.backgroundColor = 'mediumseagreen';
-
-}

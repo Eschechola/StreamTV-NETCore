@@ -2,6 +2,8 @@
 using StreamTV.Interfaces;
 using StreamTV.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace StreamTV.Application
 {
@@ -11,6 +13,30 @@ namespace StreamTV.Application
         public VideosApplication(DatabaseContext context)
         {
             _context = context;
+        }
+
+        public List<Videos> GetAllVideosByIdTelevisao(int idTelevisao, int idCliente)
+        {
+            try
+            {
+                var televisaoUsuario = _context.Televisoes.Where(x => x.FkIdCliente.Equals(idCliente) && x.Id.Equals(idTelevisao))
+                    .ToList()
+                    .FirstOrDefault();
+
+                if (televisaoUsuario != null)
+                {
+                    var videosTelevisao = _context.Videos.Where(x => x.FkIdTelevisao.Equals(televisaoUsuario.Id)).ToList();
+                    return videosTelevisao;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public bool InsertConfirm(Videos video)

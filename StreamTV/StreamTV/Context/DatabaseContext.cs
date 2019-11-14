@@ -89,6 +89,10 @@ namespace StreamTV.Context
                     .HasColumnName("nome")
                     .HasColumnType("varchar(200)");
 
+                entity.Property(e => e.Modificado)
+                    .HasColumnName("modificado")
+                    .HasColumnType("1");
+
                 entity.HasOne(d => d.FkIdClienteNavigation)
                     .WithMany(p => p.Televisoes)
                     .HasForeignKey(d => d.FkIdCliente)
@@ -107,10 +111,6 @@ namespace StreamTV.Context
                 entity.Property(e => e.FkIdTelevisao)
                     .HasColumnName("fk_id_televisao")
                     .HasColumnType("int(11)");
-
-                entity.Property(e => e.Modificado)
-                    .HasColumnName("modificado")
-                    .HasColumnType("tinyint(1)");
 
                 entity.Property(e => e.Url)
                     .HasColumnName("url")

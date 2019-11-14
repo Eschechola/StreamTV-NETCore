@@ -1,10 +1,26 @@
-﻿@{
+﻿@model List<StreamTV.Models.Videos>
+
+@{
     ViewBag.Title = "Edit Television - StreamTV";
     ViewBag.Css = "dashboard.css";
 }
 
 
 <div class="content">
+    @if (ViewBag.Info!=null)
+        {
+            <div class="warning">
+                <div class="modal-warning">
+                    <center>
+                        <h3>Aviso</h3>
+                        <br />
+                        <p>@ViewBag.Info</p>
+                        <br />
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='/Home/Index'">Início</button>
+                    </center>
+                </div>
+            </div>
+        }
     <nav class="left-nav">
         <div class="menu-itens">
             <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Profile'; ShowLoad();">
@@ -54,58 +70,46 @@
     </nav>
 
     <main class="content-page">
-        <form>
+        <form method="post" enctype="multipart/form-data">
             <div class="edit-tv-mid-page-1">
                 <div class="edit-tv-box-picture">
+                    <h3>
+                        Código
+                        <br />
+                        <strong>@ViewBag.CodeTV</strong>
+                    </h3>
+                    <br />
+                    <img src="~/imgsSite/iconDarkDelete.png" title="Excluir televisão"/>
                 </div>
-
-                <input id="update-televison" placeholder="Digite o nome da televisão" value="Televisão 1"/>
+                <input id="update-televison" name="Nome" required placeholder="Digite o nome da televisão" value="@ViewBag.NomeTelevisao"/>
             </div>
             <div class="edit-tv-mid-page-2">
                 <div class="itens-add-video">
                     <div class="televisions-to-add">
-                        
-                        <div class="content-videos">
-                            <div class="video-add" onclick="window.location.href = '/Home/EditTelevision/0'; ShowLoad();">
-                                <center>
-                                    <p>Alterar</p>
-                                </center>
-                            </div>
-                        </div>
-                        
-
-                        <div class="content-videos">
-                            <div class="video-add">
-                                <center>
-                                    <p>Alterar</p>
-                                </center>
-                            </div>
-                        </div>
-
-                        <div class="content-videos">
-                            <div class="video-add">
-                                <center>
-                                    <p>Alterar</p>
-                                </center>
-                            </div>
-                        </div>
-
-                        <div class="content-videos">
-                            <div class="video-add">
-                                <center>
-                                    <p>Alterar</p>
-                                </center>
-                            </div>
-                        </div>
+                        @if (ViewBag.Info == null)
+                        {
+                            @foreach (var video in Model)
+                            {
+                                <div class="content-videos">
+                                    <div class="video-add" onclick="window.open('@video.Url', '_blank');">
+                                        <center>
+                                            <p>Ver vídeo</p>
+                                        </center>
+                                    </div>
+                                    <img src="~/imgsSite/iconDelete.png" title="Excluir vídeo"/>
+                                </div>
+                            }
+                        }
                     </div>
                     <div class="button-add-television">
+                        <input type="file" class="file-input" name="videoAdd" style="margin-left: 0 !important;" onchange="SelecionarArquivoEdit();" />
                         <center>
                             <p id="add-icon">+</p>
                         </center>
                     </div>
                 </div>
 
-                <button type="submit" id="button-update-tv">Atualizar</button>
+                <button type="submit" id="button-update-tv" onclick="ShowLoad();">Atualizar</button>
             </div>
         </form>
     </main>

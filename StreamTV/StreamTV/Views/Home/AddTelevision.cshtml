@@ -5,109 +5,130 @@
     ViewBag.Css = "dashboard.css";
 }
 
-<div class="content">
-    <nav class="left-nav">
-        <div class="menu-itens">
-            <div class="item-menu" onclick="window.location.href = '/Home/Profile'; ShowLoad();">
-                <img src="/imgsSite/userIcon.png" />
-                <center>
-                    <p id="TextUser">SENAI</p>
-                </center>
-            </div>
-            <div class="item-menu opacity-off">
-
-            </div>
-            <div class="item-menu opacity-off">
-
-            </div>
-            <div class="item-menu opacity-off">
-
-            </div>
-            <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Index';ShowLoad();">
-                <img src="/imgsSite/userTelevision.png" />
-                <center>
-                    <p id="TextUser">Início</p>
-                </center>
-            </div>
-            <div class="item-menu" onclick="window.location.href = '/Home/Docs';ShowLoad();">
-                <img src="/imgsSite/userDocs.png" />
-                <center>
-                    <p id="TextUser">Docs</p>
-                </center>
-            </div>
-            <div class="item-menu opacity-off">
-
-            </div>
-            <div class="item-menu opacity-off">
-
-            </div>
-            <div class="item-menu opacity-off">
-
-            </div>
-
-            <div class="item-menu" onclick="window.location.href = '/Home/Logout';ShowLoad();">
-                <img src="/imgsSite/userLogout.png" />
-                <center>
-                    <p id="TextUser">Sair</p>
-                </center>
-            </div>
-        </div>
-    </nav>
-
-    <main class="content-page" id="content-add-television">
-        <div class="add-content">
-            <h2 id="Title-AddContent">Preencha algumas informações para poder adicionar um novo dispositivo</h2>
-
-            <form class="form-add-television" method="post" enctype="multipart/form-data">
-                <input type="text" name="nome" placeholder="Digite o nome do dispositivo"/>
-                <div class="add-televisions-box">
+    <div class="content">
+        @if (ViewBag.Info!=null)
+        {
+            <div class="warning">
+                <div class="modal-warning">
                     <center>
-                        <h2 id="Title-AddVideo">Selecione os vídeos</h2>
+                        <h3>Aviso</h3>
+                        <br />
+                        <p>@ViewBag.Info</p>
+                        <br />
+                        <button type="button" class="btn btn-success" onclick="FecharModalAviso()">Entendido</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='/Home/Index'">Início</button>
                     </center>
-                    <div class="box-television">
-                        <center>
-                            <div class="background-box-television">
-                                <input type="file" class="file-input" name="video1" onchange="SelecionarArquivo(0);" />
-                                <p id="TextBackgroundAdd">Adicionar</p>
-                            </div>
+                </div>
+            </div>
+        }
 
-                            <p id="TextPlusAdd">+</p>
-                        </center>
-                    </div>
-                    <div class="box-television">
-                        <center>
-                            <div class="background-box-television">
-                                <input type="file" class="file-input" name="video2" onchange="SelecionarArquivo(1);" />
-                                <p id="TextBackgroundAdd">Adicionar</p>
-                            </div>
+        <nav class="left-nav">
+            <div class="menu-itens">
+                <div class="item-menu" onclick="window.location.href = '/Home/Profile'; ShowLoad();">
+                    <img src="/imgsSite/userIcon.png" />
+                    <center>
+                        <p id="TextUser">SENAI</p>
+                    </center>
+                </div>
+                <div class="item-menu opacity-off">
 
-                            <p id="TextPlusAdd">+</p>
-                        </center>
-                    </div>
-                    <div class="box-television">
-                        <center>
-                            <div class="background-box-television">
-                                <input type="file" class="file-input" name="video3" onchange="SelecionarArquivo(2);" />
-                                <p id="TextBackgroundAdd">Adicionar</p>
-                            </div>
-                            <p id="TextPlusAdd">+</p>
-                        </center>
-                    </div>
+                </div>
+                <div class="item-menu opacity-off">
 
-                    <div class="box-television">
-                        <center>
-                            <div class="background-box-television">
-                                <input type="file" class="file-input" name="video4" onchange="SelecionarArquivo(3);" />
-                                <p id="TextBackgroundAdd">Adicionar</p>
-                            </div>
-                            <p id="TextPlusAdd">+</p>
-                        </center>
-                    </div>
+                </div>
+                <div class="item-menu opacity-off">
+
+                </div>
+                <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Index';ShowLoad();">
+                    <img src="/imgsSite/userTelevision.png" />
+                    <center>
+                        <p id="TextUser">Início</p>
+                    </center>
+                </div>
+                <div class="item-menu" onclick="window.location.href = '/Home/Docs';ShowLoad();">
+                    <img src="/imgsSite/userDocs.png" />
+                    <center>
+                        <p id="TextUser">Docs</p>
+                    </center>
+                </div>
+                <div class="item-menu opacity-off">
+
+                </div>
+                <div class="item-menu opacity-off">
+
+                </div>
+                <div class="item-menu opacity-off">
+
                 </div>
 
-                <button type="submit" id="button-add-television" onclick="ShowLoad()">Adicionar</button>
-            </form>
-        </div>
-    </main>
-</div>
+                <div class="item-menu" onclick="window.location.href = '/Home/Logout';ShowLoad();">
+                    <img src="/imgsSite/userLogout.png" />
+                    <center>
+                        <p id="TextUser">Sair</p>
+                    </center>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content-page" id="content-add-television">
+            <div class="add-content">
+                <h2 id="Title-AddContent">Preencha algumas informações para poder adicionar um novo dispositivo</h2>
+
+                <form class="form-add-television" method="post" enctype="multipart/form-data">
+                    <input type="text" name="nome" placeholder="Digite o nome do dispositivo" />
+                    <br />
+                    <br />
+                    <center>
+                        @Html.ValidationMessageFor(x => x.Nome)
+                    </center>
+                    <div class="add-televisions-box">
+                        <center>
+                            <h2 id="Title-AddVideo">Selecione os vídeos (.mp4 ou .wmv)</h2>
+                        </center>
+                        <div class="box-television">
+                            <center>
+                                <div class="background-box-television">
+                                    <input type="file" class="file-input" name="video1" onchange="SelecionarArquivo(0);" />
+                                    <p id="TextBackgroundAdd">Adicionar</p>
+                                </div>
+
+                                <p id="TextPlusAdd">+</p>
+                            </center>
+                        </div>
+                        <div class="box-television">
+                            <center>
+                                <div class="background-box-television">
+                                    <input type="file" class="file-input" name="video2" onchange="SelecionarArquivo(1);" />
+                                    <p id="TextBackgroundAdd">Adicionar</p>
+                                </div>
+
+                                <p id="TextPlusAdd">+</p>
+                            </center>
+                        </div>
+                        <div class="box-television">
+                            <center>
+                                <div class="background-box-television">
+                                    <input type="file" class="file-input" name="video3" onchange="SelecionarArquivo(2);" />
+                                    <p id="TextBackgroundAdd">Adicionar</p>
+                                </div>
+                                <p id="TextPlusAdd">+</p>
+                            </center>
+                        </div>
+
+                        <div class="box-television">
+                            <center>
+                                <div class="background-box-television">
+                                    <input type="file" class="file-input" name="video4" onchange="SelecionarArquivo(3);" />
+                                    <p id="TextBackgroundAdd">Adicionar</p>
+                                </div>
+                                <p id="TextPlusAdd">+</p>
+                            </center>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="button-add-television" onclick="ShowLoad()">Adicionar</button>
+                </form>
+            </div>
+        </main>
+    </div>
 
