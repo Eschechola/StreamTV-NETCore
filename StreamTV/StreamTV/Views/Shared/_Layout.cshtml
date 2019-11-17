@@ -10,6 +10,36 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
+        @if (ViewBag.Info != null)
+        {
+            <div class="warning">
+                <div class="modal-warning">
+                    <center>
+                        <h3>Aviso</h3>
+                        <br />
+                        <p>@ViewBag.Info</p>
+                        <br />
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='/Home/Index'">Início</button>
+                    </center>
+                </div>
+            </div>
+        }
+
+        @if (ViewBag.InfoOk != null)
+        {
+            <div class="warning">
+                <div class="modal-warning">
+                    <center>
+                        <h3>Aviso</h3>
+                        <br />
+                        <p>@ViewBag.InfoOk</p>
+                        <br />
+                        <button type="button" class="btn btn-success" onclick="FecharModalAviso()">Ok</button>
+                    </center>
+                </div>
+            </div>
+        }
+
         <div class="loading-page">
             <center>
                 <div class="loading-item">

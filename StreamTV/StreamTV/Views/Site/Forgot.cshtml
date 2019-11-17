@@ -4,7 +4,7 @@
     ViewBag.Css = "site.css";
 }
 
-@if (ViewBag.Erro != null)
+@if (ViewBag.Info != null)
 {
     <script>
         setTimeout(abrirModalError, 500);
@@ -12,7 +12,7 @@
 
     <div class="erro-message">
         <center>
-            <p id="text-error">@ViewBag.Erro</p>
+            <p id="text-error">@ViewBag.Info</p>
         </center>
         <script>
             //setTimeout(fecharModalError, 8000);

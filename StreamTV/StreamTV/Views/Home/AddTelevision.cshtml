@@ -6,22 +6,6 @@
 }
 
     <div class="content">
-        @if (ViewBag.Info!=null)
-        {
-            <div class="warning">
-                <div class="modal-warning">
-                    <center>
-                        <h3>Aviso</h3>
-                        <br />
-                        <p>@ViewBag.Info</p>
-                        <br />
-                        <button type="button" class="btn btn-success" onclick="FecharModalAviso()">Entendido</button>
-                        <button type="button" class="btn btn-primary" onclick="window.location.href='/Home/Index'">Início</button>
-                    </center>
-                </div>
-            </div>
-        }
-
         <nav class="left-nav">
             <div class="menu-itens">
                 <div class="item-menu" onclick="window.location.href = '/Home/Profile'; ShowLoad();">

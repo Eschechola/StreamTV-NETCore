@@ -1,5 +1,3 @@
-using System;
-
 namespace StreamTV.Models
 {
     public class ErrorViewModel

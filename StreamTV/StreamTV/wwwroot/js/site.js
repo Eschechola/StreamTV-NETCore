@@ -1,9 +1,4 @@
-﻿function ShowLoad() {
-    var load = document.getElementsByClassName('loading-page')[0];
-    load.style.display = 'block';
-}
-
-function fecharModalError() {
+﻿function fecharModalError() {
     var mensagem = document.getElementById('text-error');
     mensagem.style.opacity = '0';
 
@@ -40,6 +35,9 @@ function FecharMenuSite() {
 
     var menu = document.getElementsByClassName('site-menu-responsive')[0];
     menu.style.marginLeft = "-70vw";
+
+    var menu2 = document.getElementsByClassName('mid-menu-responsive')[0];
+    menu2.style.marginLeft = "-70vw";
 
     var lista = document.getElementsByTagName('li');
 

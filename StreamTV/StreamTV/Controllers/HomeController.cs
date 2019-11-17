@@ -44,12 +44,12 @@ namespace StreamTV.Controllers
                 //se não conseguir pegar nenhuma televisao, informa a mensagem
                 if (listaDeTelevisoes.Equals(null))
                 {
-                    ViewBag.Erro = "Nenhuma televisão cadastrada.";
+                    ViewBag.Info = "Nenhuma televisão cadastrada.";
                 }
             }
             catch (Exception)
             {
-                ViewBag.Erro = "Não foi possível se comunicar com a base de dados";
+                ViewBag.Info = "Não foi possível se comunicar com a base de dados";
             }
 
             return View(listaDeTelevisoes);
@@ -70,10 +70,11 @@ namespace StreamTV.Controllers
                 listaDeTelevisoes = new TelevisoesApplication(_context).GetAllByIdUser(idUsuario);
 
                 ViewBag.Televisoes = listaDeTelevisoes;
+                ViewBag.QtTelevisoes = listaDeTelevisoes.Count;
             }
             catch (Exception)
             {
-                ViewBag.Erro = "Não foi possível se comunicar com a base de dados";
+                ViewBag.Info = "Não foi possível se comunicar com a base de dados";
             }
 
             return View(dadosUsuario);
@@ -101,10 +102,40 @@ namespace StreamTV.Controllers
             {
                 //pega os dados do usuario atraves do id e retorna eles para o formulario de alteraçao
                 dadosUsuario = new ClienteApplication(_context).GetById(idUsuario);
+                ViewBag.QtTelevisoes = new TelevisoesApplication(_context).GetAllByIdUser(idUsuario).Count;
             }
             catch (Exception)
             {
-                ViewBag.Erro = "Não foi possível se comunicar com a base de dados";
+                ViewBag.Info = "Não foi possível se comunicar com a base de dados";
+            }
+
+            return View(dadosUsuario);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult UpdateAccount(Cliente cliente)
+        {
+            var dadosUsuario = new Cliente();
+            try
+            {
+                ViewBag.QtTelevisoes = new TelevisoesApplication(_context).GetAllByIdUser(idUsuario).Count;
+
+                if (ModelState.IsValid)
+                {
+                    cliente.Id = idUsuario; 
+                    var atualziarUsuario = new ClienteApplication(_context).Update(cliente);
+                    ViewBag.InfoOk = atualziarUsuario;
+                }
+                else
+                {
+                    ViewBag.InfoOk = "Os dados estão inválidos";
+                }
+            }
+            catch (Exception)
+            {
+                ViewBag.InfoOk = "Não foi possível se comunicar com a base de dados";
             }
 
             return View(dadosUsuario);
@@ -139,51 +170,120 @@ namespace StreamTV.Controllers
             return View(listaDeVideos);
         }
 
-        [Authorize]
-        [Route("/Home/EditTelevision/{idTelevision}")]
         [HttpDelete]
-        public IActionResult EditTelevision(int idTelevision = -1, bool deletar=true)
+        [AllowAnonymous]
+        public async Task<string> DeleteVideo(string codigoTelevision, int idVideo)
         {
             try
             {
-                //pega os dados da televisao que será deletada
-                var televisaoDeletar = new TelevisoesApplication(_context).GetById(idTelevision);
-                
+                //pega os dados da televisao que contem o video
+                var televisaoDeletar = new TelevisoesApplication(_context).GetByCode(codigoTelevision);
+
                 //se a televisao vier nulo, vao informar uma mensagem de erro
                 if (televisaoDeletar != null)
                 {
                     //senao vai verificar se a televisao pertence ao usuario
                     if (televisaoDeletar.FkIdCliente.Equals(idUsuario))
                     {
-                        //caso pertença ao usuario deleta a televisao e os videos dela
-                        var mensagemDeletado = new TelevisoesApplication(_context).Delete(televisaoDeletar);
-                        
-                        if(mensagemDeletado.Equals("Televisão deletada com sucesso"))
+                        //se a televisao pertencer ao usuario, ve se existe um video com esse id
+                        var todosOsVideos = new VideosApplication(_context).GetAllVideosByIdTelevisao(televisaoDeletar.Id, idUsuario);
+                        var videoDeletar = todosOsVideos.Where(x => x.Id.Equals(idVideo)).ToList().FirstOrDefault();
+
+                        if (videoDeletar != null)
                         {
-                            //deletar os arquivos dessa televisao
+                            //pega o nome do arquivo atraves da url
+                            var nomeArquivo = new Directories().GetFileNameByLink(videoDeletar.Url);
+
+                            //deleta o arquivo pelo nome
+                            var deletarArquivo = new Manipulation(_provedorDiretoriosArquivos).DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo("/wwwroot/Videos/" + nomeArquivo).PhysicalPath);
+
+                            //deleta o vídeo do banco de dados
+                            var deletarVideo = new VideosApplication(_context).Delete(videoDeletar);
+
+                            return deletarVideo;
+                        }
+                        else
+                        {
+                            return "Você não tem permissão para fazer qualquer modificação nesse vídeo.";
                         }
                     }
                     else
                     {
-                        ViewBag.Info = "Você não tem permissão para fazer qualquer modificação nessa televisão.";
+                        return "Você não tem permissão para fazer qualquer modificação nessa televisão.";
                     }
                 }
                 else
                 {
-                    ViewBag.Info = "Televisão não encontrada. Por favor tente novamente";
+                    return "Televisão não encontrada. Por favor tente novamente";
                 }
             }
             catch (Exception)
             {
-                ViewBag.Info = "Ocorreu algum erro ao se comunicar com a base de dados";
+                return "Ocorreu algum erro ao se comunicar com a base de dados";
             }
+        }
 
-            return View();
+        [HttpDelete]
+        [AllowAnonymous]
+        public async Task<string> DeleteTelevision(string codigoTelevision)
+        {
+            try
+            {
+                //pega os dados da televisao que será deletada
+                var televisaoDeletar = new TelevisoesApplication(_context).GetByCode(codigoTelevision);
+
+                //se a televisao vier nulo, vao informar uma mensagem de erro
+                if (televisaoDeletar != null)
+                {
+                    //senao vai verificar se a televisao pertence ao usuario
+                    if (televisaoDeletar.FkIdCliente.Equals(idUsuario))
+                    {
+                        var todosOsVideos = new VideosApplication(_context).GetAllVideosByIdTelevisao(televisaoDeletar.Id, idUsuario);
+
+                        for (int i = 0; i < todosOsVideos.Count; i++)
+                        {
+                            //pega o nome do arquivo através do link
+                            var nomeArquivo = new Directories().GetFileNameByLink(todosOsVideos[i].Url);
+                            
+                            //deleta o arquivo atraves do link
+                            var deletarArquivo = new Manipulation(_provedorDiretoriosArquivos).DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo("/wwwroot/Videos/" + nomeArquivo).PhysicalPath);
+
+                            //deleta o vídeo do banco
+                            var deletarVideo = new VideosApplication(_context).Delete(todosOsVideos[i]);
+                        }
+
+                        //caso pertença ao usuario deleta a televisao e os videos dela
+                        var mensagemDeletado = new TelevisoesApplication(_context).Delete(televisaoDeletar);
+
+                        if (mensagemDeletado.Equals("Televisão deletada com sucesso"))
+                        {
+                            return "Televisão deletada com sucesso!";
+                        }
+                        else
+                        {
+                            return mensagemDeletado;
+                        }
+                    }
+                    else
+                    {
+                        return "Você não tem permissão para fazer qualquer modificação nessa televisão.";
+                    }
+                }
+                else
+                {
+                    return "Televisão não encontrada. Por favor tente novamente";
+                }
+            }
+            catch (Exception)
+            {
+                return "Ocorreu algum erro ao se comunicar com a base de dados";
+            }
         }
 
         [Authorize]
         [Route("/Home/EditTelevision/{idTelevision}")]
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult EditTelevision(Televisoes televisoes, int idTelevision = -1)
         {
             try
@@ -194,9 +294,12 @@ namespace StreamTV.Controllers
                 if (televisao != null)
                 {
                     //altera o nome e o estado da televisao e atualiza no banco
-                    televisao.Nome = televisoes.Nome;
-                    televisao.Modificado = 1;
-                    ViewBag.Info = new TelevisoesApplication(_context).Update(televisao);
+                    if(televisao.Nome!= televisoes.Nome)
+                    {
+                        televisao.Nome = televisoes.Nome;
+                        televisao.Modificado = 1;
+                        ViewBag.Info = new TelevisoesApplication(_context).Update(televisao);
+                    }
 
                     if (HttpContext.Request.Form.Files != null)
                     {
@@ -223,7 +326,7 @@ namespace StreamTV.Controllers
                             }
                             else
                             {
-                                ViewBag.Info += " \nVídeo adicionado com sucesso.";
+                                ViewBag.Info += " \nTelevisão alterada com sucesso!";
                             }
                         }
                     }
@@ -249,6 +352,7 @@ namespace StreamTV.Controllers
 
         [Authorize]
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult AddTelevision(Televisoes televisao)
         {
             try

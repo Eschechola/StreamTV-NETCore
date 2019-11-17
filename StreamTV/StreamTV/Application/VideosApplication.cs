@@ -53,5 +53,20 @@ namespace StreamTV.Application
                 return false;
             }
         }
+
+        public override string Delete(Videos video)
+        {
+            try
+            {
+                _context.Videos.Remove(video);
+                _context.SaveChanges();
+
+                return "Vídeo deletado com sucesso!";
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados";
+            }
+        }
     }
 }

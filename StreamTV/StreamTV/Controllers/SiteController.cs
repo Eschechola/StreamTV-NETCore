@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using StreamTV.Application;
 using StreamTV.Context;
@@ -59,7 +56,7 @@ namespace StreamTV.Controllers
             }
             else
             {
-                ViewBag.Erro = "Email e / ou senha não encontrados";
+                ViewBag.Info = "Email e / ou senha não encontrados";
             }
 
             return View();
@@ -132,17 +129,17 @@ namespace StreamTV.Controllers
                 if (usuario != null)
                 {
                     var emailEnviado = new Messages(email).ForgotPassword();
-                    ViewBag.Erro = "Email de recuperação enviado com sucesso!!";
+                    ViewBag.Info = "Email de recuperação enviado com sucesso!!";
                 }
                 else
                 {
-                    ViewBag.Erro = "Usuário não cadastrado na nossa base de dados";
+                    ViewBag.Info = "Usuário não cadastrado na nossa base de dados";
                 }
 
             }
             catch (Exception)
             {
-                ViewBag.Erro = "Aconteceu algum erro, por - favor tente novamente";
+                ViewBag.Info = "Aconteceu algum erro, por - favor tente novamente";
             }
 
             return View();

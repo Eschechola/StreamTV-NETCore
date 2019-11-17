@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using StreamTV.Models;
 
 namespace StreamTV.Context
@@ -49,10 +47,6 @@ namespace StreamTV.Context
                 entity.Property(e => e.Instituicao)
                     .HasColumnName("instituicao")
                     .HasColumnType("varchar(200)");
-
-                entity.Property(e => e.QtTelevisoes)
-                    .HasColumnName("qt_televisoes")
-                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.Responsavel)
                     .HasColumnName("responsavel")

@@ -7,20 +7,6 @@
 
 
 <div class="content">
-    @if (ViewBag.Info!=null)
-        {
-            <div class="warning">
-                <div class="modal-warning">
-                    <center>
-                        <h3>Aviso</h3>
-                        <br />
-                        <p>@ViewBag.Info</p>
-                        <br />
-                        <button type="button" class="btn btn-primary" onclick="window.location.href='/Home/Index'">Início</button>
-                    </center>
-                </div>
-            </div>
-        }
     <nav class="left-nav">
         <div class="menu-itens">
             <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Profile'; ShowLoad();">
@@ -70,7 +56,7 @@
     </nav>
 
     <main class="content-page">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" id="form-edit-televison" enctype="multipart/form-data">
             <div class="edit-tv-mid-page-1">
                 <div class="edit-tv-box-picture">
                     <h3>
@@ -79,8 +65,8 @@
                         <strong>@ViewBag.CodeTV</strong>
                     </h3>
                     <br />
-                    <img src="~/imgsSite/iconDarkDelete.png" title="Excluir televisão"/>
-                </div>
+                    <img src="~/imgsSite/iconDarkDelete.png" title="Excluir televisão" onclick="DeletarTelevisaoAJAX('@ViewBag.CodeTV')"/>
+                 </div>
                 <input id="update-televison" name="Nome" required placeholder="Digite o nome da televisão" value="@ViewBag.NomeTelevisao"/>
             </div>
             <div class="edit-tv-mid-page-2">
@@ -96,7 +82,7 @@
                                             <p>Ver vídeo</p>
                                         </center>
                                     </div>
-                                    <img src="~/imgsSite/iconDelete.png" title="Excluir vídeo"/>
+                                    <img src="~/imgsSite/iconDelete.png" title="Excluir vídeo" onclick="DeletarVideoAJAX('@ViewBag.CodeTV', @video.Id)"/>
                                 </div>
                             }
                         }

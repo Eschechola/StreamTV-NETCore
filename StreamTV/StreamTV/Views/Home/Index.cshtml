@@ -23,7 +23,7 @@
             <div class="item-menu opacity-off">
 
             </div>
-            <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Dashboard'; ShowLoad();">
+            <div class="item-menu selected-menu" onclick="window.location.href = '/Home/Index'; ShowLoad();">
                 <img src="/imgsSite/userTelevision.png" />
                 <center>
                     <p id="TextUser">Início</p>
@@ -56,10 +56,10 @@
 
     <main class="content-page">
         <div class="content-televisions">
-            @if (ViewBag.Erro != null)
+            @if (ViewBag.Info != null)
             {
                 <center>
-                    <h2>@ViewBag.Erro</h2>
+                    <h2>@ViewBag.Info</h2>
                 </center>
             }
             else

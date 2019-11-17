@@ -58,27 +58,28 @@
         <div class="update-content">
             <h2 id="TitleUpdateAccount">Confira se seus dados estão corretos e altere-os</h2>
 
-            <form class="form-update">
-                <input placeholder="Digite o nome da instituição" value="@Model.Instituicao" />
-                 \n
-                @Html.ValidationMessageFor(x => x.Instituicao)
-                <input placeholder="Digite o nome do responsável" value="@Model.Responsavel" />
-                 \n
-                @Html.ValidationMessageFor(x => x.Responsavel)
-                <input readonly placeholder="Dispositivos cadastrados" value="@Model.QtTelevisoes" />
-                 \n
-                @Html.ValidationMessageFor(x => x.QtTelevisoes)
-                <input placeholder="Digite sua senha" type="password" />
-                 \n
-                @Html.ValidationMessageFor(x => x.Senha)
-                <input placeholder="Digite seu telefone" value="(11) 99999-9999" @Model.Telefone />
-                 \n
-                @Html.ValidationMessageFor(x => x.Telefone)
-                <input placeholder="Digite seu email" value="@Model.Email" />
-                 \n
-                @Html.ValidationMessageFor(x => x.Email)
+            <form class="form-update" method="post">
+                @Html.EditorFor(x => x.Instituicao, new { @Placeholder = "Digite o nome da instituição" })
 
-                <button type="submit" id="button-UpdateData">Alterar Dados</button>
+                @Html.EditorFor(x => x.Responsavel, new { @Placeholder = "Digite o nome do responsável" })
+
+                <input readonly placeholder="Dispositivos cadastrados" value="@ViewBag.QtTelevisoes" />
+
+                @Html.PasswordFor(x => x.Senha, new { @Placeholder = "Digite sua senha" })
+
+                @Html.EditorFor(x => x.Telefone, new { @Placeholder = "Digite seu telefone" })
+
+                @Html.EditorFor(x => x.Email, new { @Placeholder = "Digite seu email" })
+
+                <center>
+                    @Html.ValidationMessageFor(x => x.Instituicao)
+                    @Html.ValidationMessageFor(x => x.Responsavel)
+                    @Html.ValidationMessageFor(x => x.Email)
+                    @Html.ValidationMessageFor(x => x.Telefone)
+                    @Html.ValidationMessageFor(x => x.Senha)
+                </center>
+
+                <button type="submit" id="button-UpdateData" onclick="ShowLoad();">Alterar Dados</button>
             </form>
         </div>
     </main>

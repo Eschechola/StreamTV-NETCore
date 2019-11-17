@@ -3,8 +3,6 @@ using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace StreamTV.Utilities.Files
 {
@@ -26,7 +24,7 @@ namespace StreamTV.Utilities.Files
 
             try
             {
-                for(int i = 0; i < arquivos.Count; i++)
+                for (int i = 0; i < arquivos.Count; i++)
                 {
                     if (arquivos[i].Length > 0)
                     {
@@ -61,6 +59,20 @@ namespace StreamTV.Utilities.Files
             }
 
             return listaDiretorioVideos;
+        }
+
+
+        public bool DeletarArquivo(string diretorioArquivo)
+        {
+            try
+            {
+                File.Delete(diretorioArquivo);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

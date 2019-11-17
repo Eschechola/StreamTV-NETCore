@@ -46,6 +46,21 @@ namespace StreamTV.Application
             }
         }
 
+        public override string Update(Cliente cliente)
+        {
+            try
+            {
+                _context.Cliente.Update(cliente);
+                _context.SaveChanges();
+
+                return "Cliente atualizado com sucesso!";
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados!";
+            }
+        }
+
         public Cliente GetByEmail(string email)
         {
             try

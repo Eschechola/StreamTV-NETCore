@@ -92,7 +92,7 @@ namespace StreamTV.Application
                 _context.Remove(televisao);
                 _context.SaveChanges();
 
-                return "Televisão deletada com sucesso";
+                return "Televisão: "+televisao.Nome+", deletada com sucesso";
             }
             catch (Exception)
             {

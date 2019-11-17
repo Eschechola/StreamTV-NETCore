@@ -65,7 +65,9 @@ namespace StreamTV
             }
 
             app.UseStatusCodePagesWithReExecute("/NotFoundPage/NotFoundPage");
-            app.UseHttpsRedirection();
+
+            //removido para poder acessar no servidor
+            //app.UseHttpsRedirection();
 
             app.UseStaticFiles(
                 new StaticFileOptions
