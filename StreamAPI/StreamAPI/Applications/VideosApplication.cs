@@ -23,8 +23,11 @@ namespace StreamAPI.Applications
 
                 if (televisao != null)
                 {
+                    //altera o estado da televisão
+                    televisao.Modificado = 0;
+                    _context.Televisoes.Update(televisao);
+
                     var listaDeVideos = _context.Videos.Where(x => x.FkIdTelevisao.Equals(televisao.Id));
-                    
                     return listaDeVideos.ToList();
                 }
                 else
