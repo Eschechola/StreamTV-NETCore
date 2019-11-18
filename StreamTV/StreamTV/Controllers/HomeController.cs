@@ -178,6 +178,8 @@ namespace StreamTV.Controllers
             {
                 //pega os dados da televisao que contem o video
                 var televisaoDeletar = new TelevisoesApplication(_context).GetByCode(codigoTelevision);
+                televisaoDeletar.Modificado = 1;
+                
 
                 //se a televisao vier nulo, vao informar uma mensagem de erro
                 if (televisaoDeletar != null)
@@ -199,6 +201,9 @@ namespace StreamTV.Controllers
 
                             //deleta o vídeo do banco de dados
                             var deletarVideo = new VideosApplication(_context).Delete(videoDeletar);
+
+                            //define que a televisão foi modificada
+                            var atulizarTelevisao = new TelevisoesApplication(_context).Update(televisaoDeletar);
 
                             return deletarVideo;
                         }
@@ -294,11 +299,13 @@ namespace StreamTV.Controllers
                 if (televisao != null)
                 {
                     //altera o nome e o estado da televisao e atualiza no banco
-                    if(televisao.Nome!= televisoes.Nome)
+                    televisao.Nome = televisoes.Nome;
+                    televisao.Modificado = 1;
+                    var atualizarTelevisao = new TelevisoesApplication(_context).Update(televisao);
+
+                    if (televisao.Nome!= televisoes.Nome)
                     {
-                        televisao.Nome = televisoes.Nome;
-                        televisao.Modificado = 1;
-                        ViewBag.Info = new TelevisoesApplication(_context).Update(televisao);
+                        ViewBag.Info = atualizarTelevisao;
                     }
 
                     if (HttpContext.Request.Form.Files != null)
