@@ -115,7 +115,7 @@ namespace StreamTV.Controllers
         [Authorize]
         [HttpPost]
         [AllowAnonymous]
-        [DisableRequestSizeLimit]
+        [RequestSizeLimit(5*1024*1024*1024)] 
         public IActionResult UpdateAccount(Cliente cliente)
         {
             var dadosUsuario = new Cliente();
@@ -144,7 +144,7 @@ namespace StreamTV.Controllers
 
         [Authorize]
         [Route("/Home/EditTelevision/{idTelevision}")]
-        [DisableRequestSizeLimit]
+        [RequestSizeLimit(5*1024*1024*1024)] 
         public IActionResult EditTelevision(int idTelevision = -1)
         {
             var listaDeVideos = new List<Videos>();
@@ -174,7 +174,7 @@ namespace StreamTV.Controllers
 
         [HttpDelete]
         [AllowAnonymous]
-        [DisableRequestSizeLimit]
+        [RequestSizeLimit(5*1024*1024*1024)] 
         public async Task<string> DeleteVideo(string codigoTelevision, int idVideo)
         {
             try
@@ -292,7 +292,7 @@ namespace StreamTV.Controllers
         [Route("/Home/EditTelevision/{idTelevision}")]
         [HttpPost]
         [AllowAnonymous]
-        [DisableRequestSizeLimit]
+        [RequestSizeLimit(5*1024*1024*1024)] 
         public IActionResult EditTelevision(Televisoes televisoes, int idTelevision = -1)
         {
             try
@@ -364,7 +364,7 @@ namespace StreamTV.Controllers
         [Authorize]
         [HttpPost]
         [AllowAnonymous]
-        [DisableRequestSizeLimit]
+        [RequestSizeLimit(5*1024*1024*1024)] 
         public IActionResult AddTelevision(Televisoes televisao)
         {
             try
