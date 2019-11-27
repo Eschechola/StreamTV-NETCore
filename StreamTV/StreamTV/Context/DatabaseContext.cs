@@ -22,7 +22,7 @@ namespace StreamTV.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("Server=db4free.net;Database=senaitvs;Uid=senaitvs;Pwd=1234abcd;Port=3306");
+                optionsBuilder.UseMySql("Server=localhost;Database=stream;Uid=stream;Pwd=stream;Port=3306");
             }
         }
 
