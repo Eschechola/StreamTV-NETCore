@@ -21,7 +21,7 @@ namespace StreamAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("Server=localhost;Database=stream;Uid=stream;Pwd=senaisp;");
+                optionsBuilder.UseMySql("Server=localhost;Database=stream;Uid=stream;Pwd=stream;Port=3306");
             }
         }
 

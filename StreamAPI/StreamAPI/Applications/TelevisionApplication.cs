@@ -22,7 +22,7 @@ namespace StreamAPI.Applications
 
                 return televisao.FirstOrDefault();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }
