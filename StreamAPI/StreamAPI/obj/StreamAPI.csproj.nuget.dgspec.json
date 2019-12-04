@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CTTarde\\Desktop\\Eschechola\\StreamTV-NETCore\\StreamAPI\\StreamAPI\\StreamAPI.csproj": {}
+    "/home/stream/StreamTV-NETCore/StreamAPI/StreamAPI/StreamAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CTTarde\\Desktop\\Eschechola\\StreamTV-NETCore\\StreamAPI\\StreamAPI\\StreamAPI.csproj": {
+    "/home/stream/StreamTV-NETCore/StreamAPI/StreamAPI/StreamAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CTTarde\\Desktop\\Eschechola\\StreamTV-NETCore\\StreamAPI\\StreamAPI\\StreamAPI.csproj",
+        "projectUniqueName": "/home/stream/StreamTV-NETCore/StreamAPI/StreamAPI/StreamAPI.csproj",
         "projectName": "StreamAPI",
-        "projectPath": "C:\\Users\\CTTarde\\Desktop\\Eschechola\\StreamTV-NETCore\\StreamAPI\\StreamAPI\\StreamAPI.csproj",
-        "packagesPath": "C:\\Users\\CTTarde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CTTarde\\Desktop\\Eschechola\\StreamTV-NETCore\\StreamAPI\\StreamAPI\\obj\\",
+        "projectPath": "/home/stream/StreamTV-NETCore/StreamAPI/StreamAPI/StreamAPI.csproj",
+        "packagesPath": "/home/stream/.nuget/packages/",
+        "outputPath": "/home/stream/StreamTV-NETCore/StreamAPI/StreamAPI/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\CTTarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/stream/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -80,6 +73,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -88,7 +91,12 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }
