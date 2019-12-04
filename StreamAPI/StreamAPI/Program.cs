@@ -9,7 +9,10 @@ namespace StreamAPI
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = new WebHostBuilder()
+                        .UseUrls("http://localhost:5555")
+                        .Build();
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -17,7 +20,6 @@ namespace StreamAPI
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("localhost:5555");
                 }
              );
     }

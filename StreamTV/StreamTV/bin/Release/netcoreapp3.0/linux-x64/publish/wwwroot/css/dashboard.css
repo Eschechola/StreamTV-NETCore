@@ -1,0 +1,1162 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #343A3F;
+    border-radius: 0px;
+    padding: 0;
+}
+
+.file-input{
+    position: absolute;
+    z-index: 30;
+    cursor: pointer;
+    width: 100% !important;
+}
+
+input[type=file]{
+    width: 100% !important;
+    border: 1px solid red;
+    height: 100%;
+    margin-left: -50%;
+    opacity: 0;
+}
+
+.content {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    display: block;
+}
+
+.left-nav{
+    background-color: rgb(3,38,106);
+    height: 100vh;
+    position: fixed;
+    width: 5vw;
+}
+
+.menu-itens{
+    width: 100%;
+    height: 90vh;
+    margin-top: 5vh;
+}
+
+.item-menu{
+    width: 100%;
+    height: 10%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.item-menu img{
+    width: 40%;
+    margin-left: 50%;
+    position: relative;
+    margin-top: 12.5%;
+    transform: translateX(-50%);
+}
+
+.item-menu:hover{
+    background-color: #00153d;
+    transition: 0.5s;
+}
+
+.opacity-off{
+    opacity: 0;
+    cursor: initial !important;
+}
+
+.selected-menu {
+    background-color: #00153d;
+}
+
+#TextUser{
+    color: lightgray;
+    font-family: Arial;
+    margin-top: 10%;
+    font-size: 0.8vw;
+}
+
+.content-page {
+    width: 95vw;
+    height: 100vh;
+    float: left;
+    background-color: rgb(64,64,64);
+    margin-left: 5vw;
+    position: relative;
+}
+
+.content-televisions {
+    width: 90%;
+    height: 50%;
+    border-radius: 8px;
+    margin-top: 5%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #5E5758;
+}
+
+.colunm-television{
+    width: 15%;
+    float: left;
+    height: 60%;
+    margin-left: 4%;
+    margin-top: 5%;
+}
+
+.item-colunm-television {
+    width: 100%;
+    background-color: rgba(189,189,189,1);
+    height: 80%;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: url(../imgsSite/userTelevisionIcon.png);
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#TitleTelevision {
+    color: rgba(189,189,189,1);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2vw;
+    margin-top: 5%;
+    text-align: center;
+}
+
+
+.background-black-television {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.background-black-television:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#TextEditTelevision {
+    color: rgba(189,189,189,1);
+    font-size: 1.5vw;
+    transform: translateY(100%);
+}
+
+.manage-televison {
+    width: 100%;
+    margin-top: 5%;
+    height: 200px;
+}
+
+.manage-televison h3{
+    color: rgba(189,189,189,1);
+    font-size: 2vw;
+}
+
+.manage-televison button {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: #03266A;
+    color: rgba(189,189,189,1);
+    border: none;
+    padding: 11px;
+    margin-top: 3%;
+    border-radius: 5px;
+    outline: 0 !important;
+    font-size: 1vw;
+    transition: 0.5s;
+    width: 20%;
+}
+
+.manage-televison button:hover {
+    background-color: #00153d;
+    transition: 0.5s;
+}
+
+.profile-page {
+    width: 30%;
+    height: 100vh;
+    float: left;
+}
+
+.profile-page-television {
+    width: 70%;
+    height: 100vh;
+    float: left;
+    background-color: rgba(143,143,143,1);
+    overflow-y: scroll;
+}
+
+.profile-box-picture{
+    width: 70%;
+    height: 38%;
+    border-radius: 100%;
+    background-color:rgba(3,38,106,1);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10%;
+}
+
+.profile-box-picture img{
+    width: 75%;
+    margin-left: 50%;
+    margin-top: 10%;
+    transform: translateX(-50%);
+}
+
+#NameUser{
+    text-align: center;
+    margin-top: 5%;
+    color: rgba(189,189,189,1);
+    font-size: 1.7vw;
+}
+
+table {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: rgba(189,189,189,1);
+    font-size: 1.2vw;
+}
+
+td {
+    padding: 2px;
+    text-align: right;
+}
+
+#button-update {
+    background-color: rgba(3,38,106,1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: rgba(189,189,189,1);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    outline: 0;
+    margin-top: 30%;
+    width: 65%;
+    transition: 0.5s;
+}
+
+#button-update:hover {
+    background-color: #00153d;
+    transition: 0.5s;
+}
+
+.profile-television-item{
+    float: left;
+    width: 50%;
+    height: 50%;
+}
+
+.profile-television-icon {
+    width: 60%;
+    height: 70%;
+    border-radius: 12px;
+    margin-top: 8%;
+    margin-left: 50%;
+    cursor: pointer;
+    transform: translateX(-50%);
+    background-color: rgba(237,237,237,1);
+    background-image: url(../imgsSite/userTelevisionIcon.png);
+    background-size: 50% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.profile-television-item h2 {
+    text-align: center;
+    margin-top: 5%;
+    color: rgb(64,64,64);
+}
+
+.update-content {
+    width: 80%;
+    height: 90%;
+    background-color: rgb(82,82,82);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2.5%;
+    border-radius: 20px;
+    position: absolute;
+}
+
+#TitleUpdateAccount{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2.5%;
+    position: relative;
+    font-size: 2.5vw;
+    text-align: center;
+    color: rgb(241,241,241);
+}
+
+.form-update{
+    width: 90%;
+    height: 80%;
+    position: relative;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-update input{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    padding: 10px;
+    border-radius: 10px;    
+    border: 2px solid white;
+    background-color: transparent;
+    margin-top: 8%;
+    outline: 0;
+    color: white;
+    text-align: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255,255,255,0.6);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(255,255,255,0.6);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgba(255,255,255,0.6);
+}
+
+#button-UpdateData {
+    float: left;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    margin-top: 10%;
+    padding: 12px;
+    border-radius: 5px;
+    outline: 0;
+    background-color: #03266A;
+    color: rgba(189,189,189,1);
+    border: none;
+    transition: 0.5s;
+}
+
+#button-UpdateData:hover {
+    background-color: #00153d;
+    transition: 0.5s;
+}
+
+.add-content{
+    width: 80%;
+    height: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(3,38,106,1);
+    margin-top: 2.5%;
+    border-radius: 20px;
+    position: absolute;
+}
+
+#Title-AddContent{
+    width: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 2.5%;
+    color: rgb(241,241,241);
+    font-size: 2vw;
+    position: relative;
+}
+
+.form-add-television{
+    width: 80%;
+    height: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.form-add-television input[type="text"]{
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-top: 8%;
+    outline: 0;
+    color: white;
+    text-align: center;
+}
+
+.add-televisions-box{
+    width: 70%;
+    height: 35%;
+    border-radius: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(64,64,64);
+    margin-top: 6%;
+}
+
+.field-validation-error{
+    color: red !important;
+}
+
+.box-television {
+    width: 20%;
+    height: 60%;
+    margin-left: 4%;
+    margin-top: 5%;
+    background-color: rgb(209,209,209);
+    float: left;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.background-box-television {
+    width: 20%;
+    height: 60%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.9);
+    margin-top: -9% !important;
+    opacity: 0;
+    z-index: 20;
+    transition: 0.5s;
+    border-radius: 8px;
+}
+
+.background-box-television:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#TextPlusAdd{
+    font-size: 4vw;
+    margin-top: 45%;
+    transform: translateY(-50%);
+    color: dimgray;
+}
+
+#TextBackgroundAdd{
+    color: rgba(255,255,255,0.9);
+    font-size: 1vw;
+    margin-top: 40%;
+}
+
+#button-add-television {
+    background-color: rgb(241,241,241);
+    border: none;
+    outline: 0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    color: rgb(3,38,106);
+    font-size: 1.3vw;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#button-add-television:hover {
+    background-color: rgb(158,158,158);
+    transition: 0.5s;
+}
+
+#Title-AddVideo{
+    color: rgba(255,255,255,0.8);
+    font-size: 1vw;
+    transform: translateY(100%);
+}
+
+.edit-tv-mid-page-1{
+    width: 95vw;
+    height: 50vh;
+}
+
+.edit-tv-mid-page-2 {
+    width: 95vw;
+    height: 50vh;
+    background-color: #8f8f8f;
+}
+
+.edit-tv-box-picture{
+    margin-left: 50%;
+    transform: translate(-50%, 10%);
+    border-radius: 10px;
+    height: 60%;
+    width: 15%;
+    background-color: #ededed;
+}
+
+.edit-tv-box-picture img {
+    margin-top: 70%;
+    width: 26%;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.edit-tv-box-picture h3{
+    margin-top: 50%;
+    margin-left: 50%;
+    line-height: 1.6;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 3vh;
+}
+
+#update-televison {
+    width: 40%;
+    float: left;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-top: 5%;
+    outline: 0;
+    color: white;
+    text-align: center;
+}
+
+.televisions-to-add {
+    background-color: #404040;
+    width: 70%;
+    transform: translateY(25%);
+    height: 22vh;
+    float: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.button-add-television {
+    background-color: #404040;
+    width: 20%;
+    margin-left: 5%;
+    border-radius: 20px;
+    transform: translateY(25%);
+    height: 22vh;
+    float: left;
+    cursor: pointer;
+}
+
+.itens-add-video{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+}
+
+#button-update-tv {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: #03266A;
+    color: rgba(189,189,189,1);
+    border: none;
+    padding: 11px;
+    margin-top: 8%;
+    border-radius: 5px;
+    outline: 0 !important;
+    font-size: 1vw;
+    transition: 0.5s;
+    width: 20%;
+}
+
+#button-update-tv:hover {
+    background-color: #00153d;
+    transition: 0.5s;
+}
+
+#add-icon{
+    font-size: 5vw;
+    color: #fafafa;
+    margin-top: 18%;
+}
+
+.content-videos {
+    width: 18%;
+    height: 100%;
+    margin-left: 5.5%;
+    float: left;
+}
+
+.content-videos img{
+    width: 25% !important;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10%;
+    position: relative;
+    cursor: pointer;
+}
+
+.video-add{
+    width: 100%;
+    height: 65%;
+    margin-top: 10%;
+    border-radius: 10px;
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+.video-add p{
+    color: dimgray;
+    font-size: 1vw;
+    transform: translateY(180%);
+}
+
+.notFound-background {
+    background-color: #03266A;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+}
+
+.notFound-background h1{
+    color: #fafafa;
+    width: 50%;
+    text-align: left;
+    margin-left: 30%;
+    transform: translateX(-50%);
+    margin-top: 10%;
+    position: relative;
+    font-size: 3vw;
+}
+
+.notFound-background p {
+    margin-left: 30%;
+    transform: translateX(-50%);
+    color: lightgray;
+    width: 50%;
+    text-align: left;
+    font-size: 2vw;
+}
+
+.image-robot {
+    width: 25%;
+    float: right;
+    animation: animateRobot 1s infinite;
+}
+
+@keyframes animateRobot{
+    0%{
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.notFound-background button {
+    background-color: #fafafa;
+    padding: 15px;
+    font-size: 1vw;
+    border: none;
+    border-radius: 5px;
+    color: #03266A;
+    margin-left: 5%;
+    font-weight: bold;
+    transition: 0.5s;
+    float: left;
+    outline: 0;
+}
+
+#button-secondary {
+    border: 1px solid #fafafa;
+    background-color: transparent;
+    color: #fafafa;
+    outline: 0;
+    transition: 0.5s;
+}
+
+.notFound-background button:hover {
+    cursor: pointer;
+    background-color: grey;
+    transition: 0.5s;
+}
+
+#button-secondary:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.responsive-menu-dashboard {
+    width: 100vw;
+    height: 8vh;
+    position: fixed !important;
+    z-index: 20;
+    background-color: #03266A;
+    margin-top: 0vh;
+    display: none;
+  }
+
+.item-responsive-menu{
+    width: 20%;
+    height: 100%;
+    margin-left: 3.5%;
+    float: left;
+}
+
+.item-responsive-menu img{
+    width: 5vh;
+    margin-top: 40%;
+    transform: translateY(-50%);
+}
+
+
+.mid-menu-responsive {
+    width: 70vw;
+    height: 100vh;
+    background-color: #03266A;
+    position: fixed;
+    z-index: 40;
+    display: none;
+    float: left;
+    margin-left: -70vw;
+    transition: 0.5s;
+}
+
+.background-menu-responsive{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    float: left;
+    position: absolute;
+    z-index: 30;
+    display: none;
+}
+
+.mid-menu-responsive ul {
+    margin-top: 10%;
+}
+
+.mid-menu-responsive li {
+    font-size: 3vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #fafafa;
+    text-align: left;
+    margin-left: -20%;
+    opacity: 0;
+    transition: 2s;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.site-menu-responsive{
+    display: none;
+}
+
+.loading-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(11, 2, 90, 0.8);
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+.loading-item {
+    margin-top: 25%;
+    transform: translateY(-50%);
+    position: relative;
+    border: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    border-bottom: 5px solid #ffffff;
+    width: 70px;
+    border-radius: 70px;
+    height: 70px;
+    animation: rotateLoading 0.7s infinite;
+    animation-timing-function: linear;
+}
+
+#textLoading {
+    color: #fafafa;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 3vh;
+}
+
+.warning {
+    background-color: rgba(0,0,0,0.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 120;
+}
+
+.modal-warning {
+    width: 35vw;
+    height: 30vh;
+    background-color: #F5F5F7;
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 25%;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+}
+
+.modal-warning h3{
+    position: relative;
+    color: dimgray;
+    padding-bottom: 10px;
+    border-bottom: 1px solid dimgray;
+    margin-top: 2%;
+    width: 80%;
+}
+
+.modal-warning button{
+    position: relative;
+    margin-top: 5%;
+}
+
+@keyframes rotateLoading {
+    to {
+        transform: rotate(0deg);
+    }
+
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .content {
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .content-page {
+        height: 100vh;
+        width: 100vw !important;
+    }
+
+
+    .left-nav {
+        display: none;
+    }
+
+    .content-page {
+        width: 110vw;
+        margin: 0;
+        margin-top: 8vh;
+    }
+
+    .colunm-television {
+        width: 80%;
+        height: 70%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 5%;
+    }
+
+    .content-televisions {
+        height: 60vh;
+    }
+
+    #TitleTelevision {
+        font-size: 3vh;
+        margin-left: 52%;
+    }
+
+    #TextEditTelevision {
+        font-size: 4vh;
+    }
+
+    .manage-televison h3 {
+        font-size: 3vh;
+        width: 90%;
+        margin-top: 10%;
+    }
+
+    .manage-televison button {
+        width: 70%;
+        font-size: 3vh;
+        margin-top: 10%;
+    }
+
+    .responsive-menu-dashboard {
+        display: block;
+    }
+
+    .profile-page {
+        width: 100%;
+    }
+
+    .profile-box-picture {
+        background-color: transparent;
+    }
+
+    #NameUser {
+        font-size: 4vh;
+        margin-top: 0%;
+    }
+
+    table {
+        font-size: 2.8vh;
+        margin-top: 10%;
+    }
+
+    #button-update {
+        font-size: 3vh;
+        margin-top: 15%;
+    }
+
+    .profile-page-television {
+        width: 100vw;
+    }
+
+    .profile-television-item {
+        width: 80% !important;
+        margin-left: 50%;
+        transform: translate(-50%, -5%);
+    }
+
+    .profile-television-icon {
+        width: 90%;
+    }
+
+    .profile-television-item h2 {
+        font-size: 3vh;
+    }
+
+    #TitleUpdateAccount {
+        font-size: 3vh;
+        margin-top: 10%;
+        width: 90%;
+    }
+
+    .form-update input {
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.5vh;
+        margin-top: 12%;
+    }
+
+    .update-content {
+        width: 90%;
+    }
+
+    #button-UpdateData {
+        font-size: 2vh;
+        width: 80%;
+        padding: 20px;
+    }
+
+    .add-content {
+        width: 95vw;
+        height: 105vh;
+    }
+
+    #Title-AddContent {
+        font-size: 3vh;
+        width: 90%;
+        margin-top: 10%;
+    }
+
+    .form-add-television input[type="text"] {
+        width: 100%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.5vh;
+        margin-top: 12%;
+    }
+
+    .form-add-television {
+        width: 90%;
+    }
+
+    .add-televisions-box {
+        width: 100%;
+        height: 50vh;
+    }
+
+    #Title-AddVideo {
+        font-size: 2.5vh;
+        margin-top: 0;
+    }
+
+    .box-television {
+        width: 45%;
+        margin-left: 3%;
+        margin-top: 10%;
+        height: 0;
+    }
+
+    #button-add-television {
+        font-size: 3vh;
+        width: 90%;
+        margin-top: 20%;
+    }
+
+    .edit-tv-box-picture {
+        width: 70%;
+    }
+
+    #update-televison {
+        font-size: 2vh;
+        width: 70%;
+        margin-top: 15%;
+    }
+
+    .edit-tv-mid-page-2 {
+        width: 100vw;
+        height: 150vh !important;
+    }
+
+    .televisions-to-add {
+        width: 100%;
+        height: 80vh;
+        margin-top: -10%;
+    }
+
+    .itens-add-video {
+        width: 90%;
+        height: 10%;
+    }
+
+    .content-videos {
+        width: 50%;
+        height: 20%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 5%;
+        float: left;
+    }
+
+    .video-add p {
+        font-size: 2.3vh;
+    }
+
+    .video-add {
+        height: 100%;
+    }
+
+    .button-add-television {
+        margin-top: 50%;
+        width: 95%;
+        height: 35%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #add-icon {
+        margin-top: 1%;
+        font-size: 3vh;
+    }
+
+    #button-update-tv {
+        width: 80%;
+        font-size: 2.5vh;
+    }
+
+    .box-television {
+        width: 80%;
+        height: 12%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #content-add-television {
+        height: 120vh;
+    }
+
+    .background-box-television {
+        margin: 0;
+        transform: translateY(50%);
+        width: 100%;
+        height: 6vh;
+        position: relative;
+    }
+
+    #TextBackgroundAdd {
+        margin: 0;
+        transform: translateY(20%);
+        font-size: 3vh;
+    }
+
+    #TextPlusAdd {
+        margin-top: 0%;
+        font-size: 3vh;
+    }
+
+    .notFound-background h1 {
+        font-size: 4.5vh;
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .notFound-background p {
+        font-size: 3vh;
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .notFound-background button {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        font-size: 2.5vh;
+        margin-top: 10%;
+    }
+
+    #button-secondary {
+        border: 5px solid white;
+    }
+
+    .image-robot {
+        width: 50%;
+        float: none;
+        margin-top: 19%;
+        margin-left: 25%;
+        transform: translateX(-50%);
+    }
+
+
+    .mid-menu-responsive {
+        display: block;
+    }
+}
