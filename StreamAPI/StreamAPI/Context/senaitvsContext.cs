@@ -21,7 +21,7 @@ namespace StreamAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("Server=db4free.net;Database=senaitvs;Uid=senaitvs;Pwd=1234abcd;");
+                optionsBuilder.UseMySql("Server=localhost;Database=stream;Uid=stream;Pwd=senaisp;");
             }
         }
 
